@@ -112,4 +112,11 @@ function slingshot.register(name, def)
 			recipe = def.recipe,
 		})
 	end
+	
+	-- Optionally register aliases
+	if def.aliases ~= nil then
+		for index, alias in ipairs(def.aliases) do
+			minetest.register_alias(alias, 'slingshot:' .. name)
+		end
+	end
 end

@@ -11,6 +11,9 @@ slingshot.register('slingshot', {
 		{'', 'default:steel_ingot', ''},
 		{'', 'default:steel_ingot', ''},
 	},
+	aliases = {
+		'slingshot',
+	},
 })
 
 
@@ -24,7 +27,7 @@ slingshot.register('wood', {
 		{'', 'default:stick', ''},
 		{'', 'default:stick', ''},
 	},
+	aliases = {
+		'wood_slingshot',
+	}
 })
-
-
-minetest.register_alias('slingshot', 'slingshot:slingshot')
