@@ -4,6 +4,8 @@
 
 Adds a slingshot that can throw inventory items as ammunition
 
+![Screenshot](screenshot.png)
+
 Depends:
 - default
 
