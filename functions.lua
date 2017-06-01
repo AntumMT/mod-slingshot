@@ -1,9 +1,9 @@
 -- Functions for slingshot mod
 
 
-local slingshot.tmp_throw = {}
-local slingshot.tmp_throw_timer = 0
-local slingshot.tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
+slingshot.tmp_throw = {}
+slingshot.tmp_throw_timer = 0
+slingshot.tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
 
 
 minetest.register_globalstep(function(dtime)
