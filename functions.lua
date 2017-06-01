@@ -69,11 +69,12 @@ function slingshot.register(name, def)
 	else
 		image = 'slingshot_' .. name .. '.png'
 	end
-		
+	
 	minetest.register_tool('slingshot:' .. name, {
 		description = def.description,
 		range = 4,
 		inventory_image = image,
+		wield_image = image,
 		
 		on_use = function(itemstack, user, pointed_thing)
 			if pointed_thing.ref and pointed_thing.ref:is_player() == false and pointed_thing.ref:get_luaentity().name == '__builtin:item' then
