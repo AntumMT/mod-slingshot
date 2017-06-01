@@ -32,8 +32,7 @@ minetest.register_globalstep(function(dtime)
 end)
 
 
-function slingshot.on_use(itemstack, user)
-	local veloc = 15
+function slingshot.on_use(itemstack, user, veloc)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
@@ -72,7 +71,7 @@ function slingshot.register(name, def)
 				pointed_thing.ref:punch(user, {full_punch_interval=1.0, damage_groups=def.damage_groups}, 'default:bronze_pick', nil)
 				return itemstack
 			end
-			slingshot.on_use(itemstack, user)
+			slingshot.on_use(itemstack, user, def.velocity)
 			return itemstack
 		end,
 		
