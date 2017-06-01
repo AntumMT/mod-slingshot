@@ -11,7 +11,7 @@ minetest.register_tool('slingshot:slingshot', {
 			pointed_thing.ref:punch(user, {full_punch_interval=1.0, damage_groups={fleshy=4}}, 'default:bronze_pick', nil)
 			return itemstack
 		end
-		slingshot.on_use(itemstack, user)
+		slingshot.on_use(itemstack, user, 15)
 		return itemstack
 	end,
 	
