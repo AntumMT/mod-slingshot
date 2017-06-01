@@ -107,6 +107,24 @@ function slingshot.register(name, def)
 		end
 	})
 	
+	-- def.ingredient overrides def.recipe
+	if def.ingredient ~= nil then
+		if minetest.global_exists('technic') then
+			-- More complicated recipe for technic
+			def.recipe = {
+				{def.ingredient, 'slingshot:rubber_band', def.ingredient},
+				{'', def.ingredient, ''},
+				{'', def.ingredient, ''},
+			}
+		else
+			def.recipe = {
+				{def.ingredient, '', def.ingredient},
+				{'', def.ingredient, ''},
+				{'', def.ingredient, ''},
+			}
+		end
+	end
+	
 	if def.recipe ~= nil then
 		minetest.register_craft({
 			output = 'slingshot:' .. name,
