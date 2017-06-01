@@ -1,6 +1,10 @@
 -- Functions for slingshot mod
 
 
+local hook_tmp_throw = {}
+local hook_tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
+
+
 function slingshot.on_use(itemstack, user)
 	local veloc = 15
 	local pos = user:getpos()
