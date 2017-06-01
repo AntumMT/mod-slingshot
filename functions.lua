@@ -61,10 +61,19 @@ end
 -- Registers a new slingshot
 -- 'def' should include 'description', 'damage_groups', & 'velocity'
 function slingshot.register(name, def)
+	local image = {}
+	
+	-- The default slingshot
+	if name == 'slingshot' then
+		image = 'slingshot.png'
+	else
+		image = 'slingshot_' .. name .. '.png'
+	end
+		
 	minetest.register_tool('slingshot:' .. name, {
 		description = def.description,
 		range = 4,
-		inventory_image = 'slingshot_' .. name .. '.png',
+		inventory_image = image,
 		
 		on_use = function(itemstack, user, pointed_thing)
 			if pointed_thing.ref and pointed_thing.ref:is_player() == false and pointed_thing.ref:get_luaentity().name == '__builtin:item' then
