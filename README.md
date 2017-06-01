@@ -1,28 +1,43 @@
-Licenses: CC0
-By AiTechEye
-Version: 10
+# Slingshot Mod for Minetest
 
-hook:
-hit on a edge to climb up.
+### Description:
 
-upgraded hook:
-use with double hight
+Adds a slingshot that can throw inventory items as ammunition
 
-rope:
-place on a edge to climb, or throw it.
+Depends:
+- default
 
-locked rope:
-only you can take it, or throw it.
 
-slingshot:
-throw junk far away and hurt your enemies
-place it to change side to use
+### Licensing:
 
-Mouth breather assembly:
-use outside water/vaccum to refill with air, use in water/vaccum to refill your breath (max 10 times))
+- Original code by [AiTechEye][]: [CC0][lic.cc0]
+- Code by Jordan Irwin: [MIT][lic.mit]
 
-Work rbot:
-Place the controler to change between 8 modes.
 
-Pchest:
-portable chest, the stuff is stored inside the chest/tool, and not in a ghost inventory.
+### Functions:
+
+- *Right-click*: Changes ammo slot between left & right of slingshot
+- *Left-click*: Throws items from selected ammo slot
+
+
+### Crafting:
+
+* `SI` = default:steel_ingot
+* `SB` = default:steelblock
+
+Craft recipe:
+
+    ╔════╦════╦════╗
+    ║ SI ║    ║ SI ║
+    ╠════╬════╬════╣
+    ║    ║ SB ║    ║
+    ╠════╬════╬════╣
+    ║    ║ SI ║    ║
+    ╚════╩════╩════╝
+
+
+
+[AiTechEye]: https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172
+
+[lic.cc0]: LICENSE-cc0.txt
+[lic.mit]: LICENSE.txt
