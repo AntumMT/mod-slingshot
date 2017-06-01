@@ -59,11 +59,11 @@ end
 
 
 -- Registers a new slingshot
--- 'def' should include 'description', 'range', & 'damage_groups'
+-- 'def' should include 'description', 'damage_groups', & 'velocity'
 function slingshot.register(name, def)
 	minetest.register_tool('slingshot:' .. name, {
 		description = def.description,
-		range = def.range,
+		range = 4,
 		inventory_image = 'slingshot_' .. name .. '.png',
 		
 		on_use = function(itemstack, user, pointed_thing)
