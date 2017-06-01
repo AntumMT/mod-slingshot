@@ -1,18 +1,18 @@
 -- Functions for slingshot mod
 
 
-local hook_tmp_throw = {}
-local hook_tmp_throw_timer = 0
-local hook_tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
+local slingshot.tmp_throw = {}
+local slingshot.tmp_throw_timer = 0
+local slingshot.tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
 
 
 minetest.register_globalstep(function(dtime)
-	hook_tmp_throw_timer = hook_tmp_throw_timer + dtime
-	if hook_tmp_throw_timer < 0.2 then return end
-	hook_tmp_throw_timer = 0
-	for i, t in pairs(hook_tmp_throw) do
+	slingshot.tmp_throw_timer = slingshot.tmp_throw_timer + dtime
+	if slingshot.tmp_throw_timer < 0.2 then return end
+	slingshot.tmp_throw_timer = 0
+	for i, t in pairs(slingshot.tmp_throw) do
 		t.timer = t.timer-0.25
-		if t.timer <= 0 or t.ob == nil or t.ob:getpos() == nil then table.remove(hook_tmp_throw, i) return end
+		if t.timer <= 0 or t.ob == nil or t.ob:getpos() == nil then table.remove(slingshot.tmp_throw, i) return end
 		for ii, ob in pairs(minetest.get_objects_inside_radius(t.ob:getpos(), 1.5)) do
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and minetest.setting_getbool('enable_pvp') == true) then
@@ -22,7 +22,7 @@ minetest.register_globalstep(function(dtime)
 					if ob:get_hp() <= 0 and ob:is_player() == false then ob:remove() end
 					t.ob:setacceleration({x=0, y=-10,z=0})
 					t.ob:setvelocity({x=0, y=-10, z=0})
-					table.remove(hook_tmp_throw, i)
+					table.remove(slingshot.tmp_throw, i)
 					minetest.sound_play('slingshot_hard_punch', {pos=ob:getpos(), gain = 1.0, max_hear_distance = 5,})
 					break
 				end
@@ -46,8 +46,8 @@ function slingshot.on_use(itemstack, user)
 	local e = minetest.add_item({x=pos.x, y=pos.y+2, z=pos.z}, item)
 	e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
 	e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
-	e:get_luaentity().age = hook_tmp_time
-	table.insert(hook_tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
+	e:get_luaentity().age = slingshot.tmp_time
+	table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
 
 	if item == 'slingshot:slingshot' then
 	itemstack:set_wear(9999999)
