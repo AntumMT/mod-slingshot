@@ -36,3 +36,6 @@ minetest.register_tool('slingshot:slingshot', {
 		return itemstack
 	end
 })
+
+
+minetest.register_alias('slingshot', 'slingshot:slingshot')
