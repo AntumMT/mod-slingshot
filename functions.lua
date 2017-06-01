@@ -88,7 +88,7 @@ function slingshot.register(name, def)
 				minetest.chat_send_player(user:get_player_name(), 'Use stack to left')
 			else
 				mode = 1
-				minetest.chat_send_player(user:get_player_name(), 'Use stack to right ')
+				minetest.chat_send_player(user:get_player_name(), 'Use stack to right')
 			end
 			meta.mode = mode
 			item.metadata = minetest.serialize(meta)
