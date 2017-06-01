@@ -19,6 +19,7 @@ end
 local scripts = {
 	'functions',
 	'register',
+	'crafting',
 }
 
 for index, script in ipairs(scripts) do
@@ -421,13 +422,3 @@ minetest.register_craft({
 		{"hook:climb_rope","default:steel_ingot",""},
 	}
 })
-
-minetest.register_craft({
-	output = "hook:slingshot",
-	recipe = {
-		{"default:steel_ingot","","default:steel_ingot"},
-		{"","default:steelblock",""},
-		{"","default:steel_ingot",""},
-	}
-})
-
