@@ -1,3 +1,8 @@
+
+slingshot = {}
+slingshot.modname = minetest.get_current_modname()
+slingshot.modpath = minetest.get_modpath(slingshot.modname)
+
 local hook_tmp_throw={}
 local hook_tmp_throw_timer=0
 local hook_tmp_time= tonumber(minetest.setting_get("item_entity_ttl"))
