@@ -23,6 +23,6 @@ function slingshot.on_use(itemstack, user)
 	end
 
 	user:get_inventory():remove_item('main', item)
-	minetest.sound_play('hook_throw', {pos=pos, gain = 1.0, max_hear_distance = 5,})
+	minetest.sound_play('slingshot_throw', {pos=pos, gain = 1.0, max_hear_distance = 5,})
 	return itemstack
 end
