@@ -4,7 +4,7 @@
 minetest.register_tool('slingshot:slingshot', {
 	description = 'Slingshot',
 	range = 4,
-	inventory_image = 'hook_slingshot.png',
+	inventory_image = 'slingshot.png',
 	
 	on_use = function(itemstack, user, pointed_thing)
 		if pointed_thing.ref and pointed_thing.ref:is_player() == false and pointed_thing.ref:get_luaentity().name == '__builtin:item' then
