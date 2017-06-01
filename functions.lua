@@ -2,7 +2,34 @@
 
 
 local hook_tmp_throw = {}
+local hook_tmp_throw_timer = 0
 local hook_tmp_time = tonumber(minetest.setting_get('item_entity_ttl')) or 890
+
+
+minetest.register_globalstep(function(dtime)
+	hook_tmp_throw_timer = hook_tmp_throw_timer + dtime
+	if hook_tmp_throw_timer < 0.2 then return end
+	hook_tmp_throw_timer = 0
+	for i, t in pairs(hook_tmp_throw) do
+		t.timer = t.timer-0.25
+		if t.timer <= 0 or t.ob == nil or t.ob:getpos() == nil then table.remove(hook_tmp_throw, i) return end
+		for ii, ob in pairs(minetest.get_objects_inside_radius(t.ob:getpos(), 1.5)) do
+			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
+				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and minetest.setting_getbool('enable_pvp') == true) then
+					ob:set_hp(ob:get_hp()-5)
+					ob:punch(ob, {full_punch_interval=1.0, damage_groups={fleshy=4}}, 'default:bronze_pick', nil)
+					t.ob:setvelocity({x=0, y=0, z=0})
+					if ob:get_hp() <= 0 and ob:is_player() == false then ob:remove() end
+					t.ob:setacceleration({x=0, y=-10,z=0})
+					t.ob:setvelocity({x=0, y=-10, z=0})
+					table.remove(hook_tmp_throw, i)
+					minetest.sound_play('slingshot_hard_punch', {pos=ob:getpos(), gain = 1.0, max_hear_distance = 5,})
+					break
+				end
+			end
+		end
+	end
+end)
 
 
 function slingshot.on_use(itemstack, user)
