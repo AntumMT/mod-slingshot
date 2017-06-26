@@ -43,18 +43,20 @@ function slingshot.on_use(itemstack, user, veloc)
 	local item = user:get_inventory():get_stack('main', user:get_wield_index()+mode):get_name()
 	if item == '' then return itemstack end
 	local e = minetest.add_item({x=pos.x, y=pos.y+2, z=pos.z}, item)
-	e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
-	e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
-	e:get_luaentity().age = slingshot.tmp_time
-	table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
-
-	if item == 'slingshot:slingshot' then
-	itemstack:set_wear(9999999)
+	if e then
+		e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
+		e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
+		e:get_luaentity().age = slingshot.tmp_time
+		table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
+	
+		if item == 'slingshot:slingshot' then
+			itemstack:set_wear(9999999)
+		end
+		
+		user:get_inventory():remove_item('main', item)
+		minetest.sound_play('slingshot_throw', {pos=pos, gain = 1.0, max_hear_distance = 5,})
+		return itemstack
 	end
-
-	user:get_inventory():remove_item('main', item)
-	minetest.sound_play('slingshot_throw', {pos=pos, gain = 1.0, max_hear_distance = 5,})
-	return itemstack
 end
 
 
