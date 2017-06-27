@@ -74,8 +74,7 @@ function slingshot.on_use(itemstack, user, veloc)
 	local item = itemstack:to_table()
 	
 	-- Throw items in slot to right
-	local mode = 1
-	local item = user:get_inventory():get_stack('main', user:get_wield_index()+mode):get_name()
+	local item = user:get_inventory():get_stack('main', user:get_wield_index()+1):get_name()
 	
 	if item == '' then return itemstack end
 	
