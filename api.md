@@ -4,6 +4,20 @@
 ---
 ## -- Functions --
 
+### ***slingshot.log(message)***
+- Info log message
+  - Logs 'info' message if 'log_message' setting set to 'true'.
+- **param:** *message*
+  - Message to be logged
+  - **type:** *string*
+
+### ***slingshot.logDebug(message)***
+- Debug log message
+  - Logs 'info' message if 'debug_log_level' setting set to 'verbose'.
+- **param:** *message*
+  - Message to be logged
+  - **type:** *string*
+
 ### ***slingshot.on_use(itemstack, user, veloc)***
 - Action to take when slingshot is used
 - **param:** *itemstack*

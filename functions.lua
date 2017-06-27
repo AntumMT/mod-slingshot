@@ -1,6 +1,36 @@
 -- Functions for slingshot mod
 
 
+-- Displays mod name in square brackets at beginning of log messages
+local log_header = '[' .. slingshot.modname .. '] '
+
+--[[ Info log message
+  
+  Logs 'info' message if 'log_message' setting set to 'true'.
+]]
+function slingshot.log(message)
+	if minetest.settings:get_bool('log_mods') then
+		minetest.log('info', log_header .. message)
+	end
+end
+
+local debug = minetest.settings:get_bool('enable_debug')
+if debug == nil then
+	-- Default is disabled
+	debug = false
+end
+
+--[[ Debug log message
+  
+  Logs 'info' message if 'debug_log_level' setting set to 'verbose'.
+]]
+function slingshot.logDebug(message)
+	if debug then
+		minetest.log('info', log_header .. 'DEBUG: ' .. message)
+	end
+end
+
+
 slingshot.tmp_throw = {}
 slingshot.tmp_throw_timer = 0
 slingshot.tmp_time = tonumber(minetest.settings:get('item_entity_ttl')) or 890
