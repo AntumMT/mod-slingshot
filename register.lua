@@ -31,18 +31,22 @@ slingshot.register('wood', {
 	velocity = 10,
 	ingredient = 'group:stick',
 	aliases = {
+		slingshot.modname .. ':wooden',
 		'wood_slingshot',
+		'wooden_slingshot',
 	}
 })
 
 
 -- A stronger iron slingshot
-slingshot.register('slingshot', {
-	description = 'Slingshot',
+slingshot.register('iron', {
+	description = 'Iron Slingshot',
 	damage_groups = {fleshy=4},
 	velocity = 15,
 	ingredient = 'default:steel_ingot',
 	aliases = {
-		'slingshot',
+		slingshot.modname,
+		slingshot.modname .. ':slingshot',
+		'iron_slingshot',
 	},
 })
