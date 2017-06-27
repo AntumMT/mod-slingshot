@@ -6,15 +6,19 @@ slingshot.tmp_throw_timer = 0
 slingshot.tmp_time = tonumber(minetest.settings:get('item_entity_ttl')) or 890
 
 
+-- Registers 'cooldown' time for repeat throws
 minetest.register_globalstep(function(dtime)
 	slingshot.tmp_throw_timer = slingshot.tmp_throw_timer + dtime
 	if slingshot.tmp_throw_timer < 0.2 then return end
+	
+	-- Reset cooldown
 	slingshot.tmp_throw_timer = 0
 	for i, t in pairs(slingshot.tmp_throw) do
 		t.timer = t.timer-0.25
 		if t.timer <= 0 or t.ob == nil or t.ob:getpos() == nil then table.remove(slingshot.tmp_throw, i) return end
 		for ii, ob in pairs(minetest.get_objects_inside_radius(t.ob:getpos(), 1.5)) do
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
+				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and minetest.settings:get_bool('enable_pvp') == true) then
 					ob:set_hp(ob:get_hp()-5)
 					ob:punch(ob, {full_punch_interval=1.0, damage_groups={fleshy=4}}, 'default:bronze_pick', nil)
@@ -23,7 +27,7 @@ minetest.register_globalstep(function(dtime)
 					t.ob:setacceleration({x=0, y=-10,z=0})
 					t.ob:setvelocity({x=0, y=-10, z=0})
 					table.remove(slingshot.tmp_throw, i)
-					minetest.sound_play('slingshot_hard_punch', {pos=ob:getpos(), gain = 1.0, max_hear_distance = 5,})
+					minetest.sound_play('slingshot_hard_punch', {pos=ob:getpos(), gain=1.0, max_hear_distance=5,})
 					break
 				end
 			end
@@ -32,23 +36,26 @@ minetest.register_globalstep(function(dtime)
 end)
 
 
+-- Action to take when slingshot is used
 function slingshot.on_use(itemstack, user, veloc)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
 	local item = itemstack:to_table()
+	
 	-- Throw items in slot to right
 	local mode = 1
-
 	local item = user:get_inventory():get_stack('main', user:get_wield_index()+mode):get_name()
+	
 	if item == '' then return itemstack end
+	
 	local e = minetest.add_item({x=pos.x, y=pos.y+2, z=pos.z}, item)
 	if e then
 		e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
 		e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
 		e:get_luaentity().age = slingshot.tmp_time
 		table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
-	
+		
 		if item == 'slingshot:slingshot' then
 			itemstack:set_wear(9999999)
 		end
@@ -60,8 +67,10 @@ function slingshot.on_use(itemstack, user, veloc)
 end
 
 
--- Registers a new slingshot
--- 'def' should include 'description', 'damage_groups', & 'velocity'
+--[[ Registers a new slingshot
+  
+  'def' should include 'description', 'damage_groups', & 'velocity'.
+]]
 function slingshot.register(name, def)
 	local image = {}
 	

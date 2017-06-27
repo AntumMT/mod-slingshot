@@ -24,19 +24,7 @@ if minetest.global_exists('technic') then
 end
 
 
--- A metal slingshot
-slingshot.register('slingshot', {
-	description = 'Slingshot',
-	damage_groups = {fleshy=4},
-	velocity = 15,
-	ingredient = 'default:steel_ingot',
-	aliases = {
-		'slingshot',
-	},
-})
-
-
--- A weaker slingshot
+-- A wooden slingshot
 slingshot.register('wood', {
 	description = 'Wooden slingshot',
 	damage_groups = {fleshy=2},
@@ -45,4 +33,16 @@ slingshot.register('wood', {
 	aliases = {
 		'wood_slingshot',
 	}
+})
+
+
+-- A stronger iron slingshot
+slingshot.register('slingshot', {
+	description = 'Slingshot',
+	damage_groups = {fleshy=4},
+	velocity = 15,
+	ingredient = 'default:steel_ingot',
+	aliases = {
+		'slingshot',
+	},
 })
