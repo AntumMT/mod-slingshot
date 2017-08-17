@@ -53,11 +53,10 @@ core.register_globalstep(function(dtime)
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
 				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and core.settings:get_bool('enable_pvp') == true) then
-					ob:set_hp(ob:get_hp()-5)
-					ob:punch(ob, {full_punch_interval=1.0, damage_groups={fleshy=4}}, '', nil)
+					-- FIXME: Don't use 'ob' for puncher
+					ob:punch(ob, 1.0, {damage_groups={fleshy=4}}, nil)
 					t.ob:setvelocity({x=0, y=0, z=0})
-					if ob:get_hp() <= 0 and ob:is_player() == false then ob:remove() end
-					t.ob:setacceleration({x=0, y=-10,z=0})
+					t.ob:setacceleration({x=0, y=-10, z=0})
 					t.ob:setvelocity({x=0, y=-10, z=0})
 					table.remove(tmp_throw, i)
 					core.sound_play('slingshot_hard_punch', {pos=ob:getpos(), gain=1.0, max_hear_distance=5,})
