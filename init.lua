@@ -15,7 +15,7 @@ end
 
 
 local scripts = {
-	'functions',
+	'api',
 	'weapons',
 }
 
