@@ -16,7 +16,7 @@ function slingshot.log(message)
 	end
 end
 
-local debug = core.settings:get_bool('enable_debug') == true
+local debug = core.settings:get_bool('enable_debug_mods') == true
 
 --- Debug log message.
 --
@@ -26,7 +26,7 @@ local debug = core.settings:get_bool('enable_debug') == true
 -- @tparam string message Message to be logged.
 function slingshot.logDebug(message)
 	if debug then
-		core.log('info', log_header .. 'DEBUG: ' .. message)
+		core.log(log_header .. 'DEBUG: ' .. message)
 	end
 end
 
