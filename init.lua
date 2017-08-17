@@ -1,11 +1,11 @@
 
 slingshot = {}
-slingshot.modname = minetest.get_current_modname()
-slingshot.modpath = minetest.get_modpath(slingshot.modname)
+slingshot.modname = core.get_current_modname()
+slingshot.modpath = core.get_modpath(slingshot.modname)
 
 
-if minetest.settings:get_bool('log_mods') then
-	minetest.log('action', '[slingshot] Require rubber band: ' .. tostring(slingshot.require_rubber_band))
+if core.settings:get_bool('log_mods') then
+	core.log('action', '[slingshot] Require rubber band: ' .. tostring(slingshot.require_rubber_band))
 end
 
 
