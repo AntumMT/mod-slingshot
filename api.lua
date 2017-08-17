@@ -31,6 +31,9 @@ function slingshot.logDebug(message)
 end
 
 
+-- Enables/Disables wear/break of slingshots when used for attacking
+local weapon_wear = minetest.settings:get_bool('enable_weapon_wear') ~= false
+
 slingshot.tmp_throw = {}
 slingshot.tmp_throw_timer = 0
 slingshot.tmp_time = tonumber(minetest.settings:get('item_entity_ttl')) or 890
@@ -85,12 +88,12 @@ function slingshot.on_use(itemstack, user, veloc)
 		e:get_luaentity().age = slingshot.tmp_time
 		table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
 		
-		if item == 'slingshot:slingshot' then
-			itemstack:set_wear(9999999)
+		if weapon_wear then
+			itemstack:add_wear(100)
 		end
 		
 		user:get_inventory():remove_item('main', item)
-		minetest.sound_play('slingshot_throw', {pos=pos, gain = 1.0, max_hear_distance = 5,})
+		minetest.sound_play('slingshot_throw', {pos=pos, gain=1.0, max_hear_distance=5,})
 		return itemstack
 	end
 end
