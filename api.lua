@@ -134,10 +134,12 @@ function slingshot.register(name, def)
 		wield_image = image,
 		
 		on_use = function(itemstack, user, pointed_thing)
+			--[[
 			if pointed_thing.ref and pointed_thing.ref:is_player() == false and pointed_thing.ref:get_luaentity().name == '__builtin:item' then
 				pointed_thing.ref:punch(user, {full_punch_interval=1.0, damage_groups=def.damage_groups}, '', nil)
 				return itemstack
 			end
+			]]
 			slingshot.on_use(itemstack, user, def.velocity, def.wear_rate)
 			return itemstack
 		end,
