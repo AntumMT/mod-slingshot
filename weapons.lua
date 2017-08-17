@@ -29,6 +29,7 @@ slingshot.register('wood', {
 	description = 'Wooden slingshot',
 	damage_groups = {fleshy=2},
 	velocity = 10,
+	wear_rate = 500,
 	ingredient = 'group:stick',
 	aliases = {
 		slingshot.modname .. ':wooden',
@@ -43,6 +44,7 @@ slingshot.register('iron', {
 	description = 'Iron Slingshot',
 	damage_groups = {fleshy=4},
 	velocity = 15,
+	wear_rate = 250,
 	ingredient = 'default:steel_ingot',
 	aliases = {
 		slingshot.modname,

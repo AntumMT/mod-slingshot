@@ -75,7 +75,7 @@ end)
 -- @param itemstack
 -- @param user
 -- @param veloc
-function slingshot.on_use(itemstack, user, veloc)
+function slingshot.on_use(itemstack, user, veloc, wear_rate)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
@@ -94,7 +94,13 @@ function slingshot.on_use(itemstack, user, veloc)
 		table.insert(slingshot.tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
 		
 		if weapon_wear then
-			itemstack:add_wear(100)
+			if wear_rate == nil then
+				wear_rate = 100
+			end
+			
+			slingshot.logDebug('Wear rate: ' .. tostring(wear_rate))
+			
+			itemstack:add_wear(wear_rate)
 		end
 		
 		user:get_inventory():remove_item('main', item)
@@ -132,7 +138,7 @@ function slingshot.register(name, def)
 				pointed_thing.ref:punch(user, {full_punch_interval=1.0, damage_groups=def.damage_groups}, '', nil)
 				return itemstack
 			end
-			slingshot.on_use(itemstack, user, def.velocity)
+			slingshot.on_use(itemstack, user, def.velocity, def.wear_rate)
 			return itemstack
 		end,
 	})
