@@ -4,10 +4,12 @@
 -- Displays mod name in square brackets at beginning of log messages
 local log_header = '[' .. slingshot.modname .. '] '
 
---[[ Info log message
-  
-  Logs 'info' message if 'log_message' setting set to 'true'.
-]]
+--- Info log message
+--
+-- Logs 'info' message if 'log_message' setting set to 'true'.
+--
+-- @function slingshot.log
+-- @tparam string message Message to be logged.
 function slingshot.log(message)
 	if minetest.settings:get_bool('log_mods') then
 		minetest.log('info', log_header .. message)
@@ -20,10 +22,12 @@ if debug == nil then
 	debug = false
 end
 
---[[ Debug log message
-  
-  Logs 'info' message if 'debug_log_level' setting set to 'verbose'.
-]]
+--- Debug log message.
+--
+-- Logs 'info' message if 'debug_log_level' setting set to 'verbose'.
+--
+-- @function slingshot.logDebug
+-- @tparam string message Message to be logged.
 function slingshot.logDebug(message)
 	if debug then
 		minetest.log('info', log_header .. 'DEBUG: ' .. message)
@@ -69,7 +73,12 @@ minetest.register_globalstep(function(dtime)
 end)
 
 
--- Action to take when slingshot is used
+--- Action to take when slingshot is used.
+--
+-- @function slingshot.on_use
+-- @param itemstack
+-- @param user
+-- @param veloc
 function slingshot.on_use(itemstack, user, veloc)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
@@ -99,10 +108,13 @@ function slingshot.on_use(itemstack, user, veloc)
 end
 
 
---[[ Registers a new slingshot
-  
-  'def' should include 'description', 'damage_groups', & 'velocity'.
-]]
+--- Registers a new slingshot.
+--
+-- 'def' should include 'description', 'damage_groups', & 'velocity'.
+--
+-- @function slingshot.register
+-- @param name
+-- @param def
 function slingshot.register(name, def)
 	local image = {}
 	
