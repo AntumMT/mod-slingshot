@@ -16,7 +16,7 @@ end
 
 local scripts = {
 	'functions',
-	'register',
+	'weapons',
 }
 
 for index, script in ipairs(scripts) do
