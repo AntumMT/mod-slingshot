@@ -16,11 +16,7 @@ function slingshot.log(message)
 	end
 end
 
-local debug = core.settings:get_bool('enable_debug')
-if debug == nil then
-	-- Default is disabled
-	debug = false
-end
+local debug = core.settings:get_bool('enable_debug') == true
 
 --- Debug log message.
 --
