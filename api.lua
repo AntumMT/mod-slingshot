@@ -70,11 +70,12 @@ end)
 
 --- Action to take when slingshot is used.
 --
--- @function slingshot.on_use
+-- @function on_throw
+-- @local
 -- @param itemstack
 -- @param user
 -- @param veloc
-function slingshot.on_use(itemstack, user, veloc, wear_rate, damage_groups)
+local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
@@ -154,7 +155,7 @@ function slingshot.register(name, def)
 				return itemstack
 			end
 			]]
-			slingshot.on_use(itemstack, user, def.velocity, def.wear_rate, def.damage_groups)
+			on_throw(itemstack, user, def.velocity, def.wear_rate, def.damage_groups)
 			return itemstack
 		end,
 	})
