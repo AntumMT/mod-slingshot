@@ -1,5 +1,9 @@
 -- Functions for slingshot mod
 
+--- Slingshot mod API.
+--
+-- @module api
+
 
 -- Displays mod name in square brackets at beginning of log messages
 local log_header = '[' .. slingshot.modname .. '] '
@@ -121,7 +125,7 @@ end
 --
 -- @function slingshot.register
 -- @tparam string name Name of the slingshot (e.g. ***"iron"***).
--- @tparam table def Slingshot definition table (see [slingshot.register.def][]).
+-- @tparam table def Slingshot definition table (see [slingshot.register.def](#slingshot.register.def)).
 function slingshot.register(name, def)
 	if def.inventory_image then
 		-- Inventory image will override image if set
@@ -195,6 +199,10 @@ function slingshot.register(name, def)
 end
 
 
+--- Function Definition Tables.
+--
+-- @section fdtables
+
 --- Slingshot definition table.
 --
 -- @table slingshot.register.def
@@ -207,3 +215,4 @@ end
 -- @tfield table recipe A custom recipe to use for crafting.
 -- @tfield string ingredient Creates a standard craft recipe using this ingredient (overrides ***recipe***).
 -- @tfield table aliases List of item names that should be uses as aliases for this slingshot.
+-- @see slingshot.register
