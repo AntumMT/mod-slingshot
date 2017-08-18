@@ -27,7 +27,7 @@ end
 -- A wooden slingshot
 slingshot.register('wood', {
 	description = 'Wooden slingshot',
-	damage_groups = {fleshy=2},
+	damage_groups = {fleshy=1},
 	velocity = 10,
 	wear_rate = 500,
 	ingredient = 'group:stick',
@@ -42,7 +42,7 @@ slingshot.register('wood', {
 -- A stronger iron slingshot
 slingshot.register('iron', {
 	description = 'Iron Slingshot',
-	damage_groups = {fleshy=4},
+	damage_groups = {fleshy=3},
 	velocity = 15,
 	wear_rate = 250,
 	ingredient = 'default:steel_ingot',
