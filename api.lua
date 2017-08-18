@@ -54,7 +54,6 @@ core.register_globalstep(function(dtime)
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
 				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and core.settings:get_bool('enable_pvp') == true) then
-					-- FIXME: Don't use 'ob' for puncher
 					ob:punch(puncher, 1.0, {damage_groups={fleshy=4}}, nil)
 					t.ob:setvelocity({x=0, y=0, z=0})
 					t.ob:setacceleration({x=0, y=-10, z=0})
