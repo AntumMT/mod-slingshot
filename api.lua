@@ -117,20 +117,30 @@ end
 -- @param name
 -- @param def
 function slingshot.register(name, def)
-	local image = {}
+	if def.inventory_image then
+		-- Inventory image will override image if set
+		def.image = def.inventory_image
+	end
 	
-	-- The default slingshot
-	if name == 'slingshot' then
-		image = 'slingshot.png'
-	else
-		image = 'slingshot_' .. name .. '.png'
+	if not def.image then
+		-- The default slingshot
+		if name == 'slingshot' then
+			def.image = 'slingshot.png'
+		else
+			def.image = 'slingshot_' .. name .. '.png'
+		end
+	end
+	
+	if not def.wield_image then
+		-- Use inventory image
+		def.wield_image = def.image
 	end
 	
 	core.register_tool('slingshot:' .. name, {
 		description = def.description,
 		range = 4,
-		inventory_image = image,
-		wield_image = image,
+		inventory_image = def.image,
+		wield_image = def.wield_image,
 		
 		on_use = function(itemstack, user, pointed_thing)
 			--[[ Disabled picking up items with slingshot in hand
