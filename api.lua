@@ -120,8 +120,8 @@ end
 -- 'def' should include 'description', 'damage_groups', & 'velocity'.
 --
 -- @function slingshot.register
--- @param name
--- @param def
+-- @tparam string name Name of the slingshot (e.g. ***"iron"***).
+-- @tparam table def Slingshot definition table (see [slingshot.register.def][]).
 function slingshot.register(name, def)
 	if def.inventory_image then
 		-- Inventory image will override image if set
@@ -193,3 +193,17 @@ function slingshot.register(name, def)
 		end
 	end
 end
+
+
+--- Slingshot definition table.
+--
+-- @table slingshot.register.def
+-- @tfield string description Human-readable description of slingshot (e.g. ***"Wooden Slinghot"***).
+-- @tfield table damage_groups
+-- - Same as [minetest.register_tool.tool_capabilities.damage_groups](https://github.com/minetest/minetest/blob/71b02d6/doc/lua_api.txt#L1551)
+-- - Default: {fleshy=1}
+-- @tfield int velocity Speed & distance at which items will be thrown.
+-- @tfield int wear_rate Rate at which the slingshot will wear & break.
+-- @tfield table recipe A custom recipe to use for crafting.
+-- @tfield string ingredient Creates a standard craft recipe using this ingredient (overrides ***recipe***).
+-- @tfield table aliases List of item names that should be uses as aliases for this slingshot.
