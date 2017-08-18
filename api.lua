@@ -54,7 +54,7 @@ core.register_globalstep(function(dtime)
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= '__builtin:item')) then
 				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and core.settings:get_bool('enable_pvp') == true) then
-					ob:punch(puncher, 1.0, {damage_groups={fleshy=4}}, nil)
+					ob:punch(puncher, 1.0, {damage_groups=t.damage_groups}, nil)
 					t.ob:setvelocity({x=0, y=0, z=0})
 					t.ob:setacceleration({x=0, y=-10, z=0})
 					t.ob:setvelocity({x=0, y=-10, z=0})
@@ -74,7 +74,7 @@ end)
 -- @param itemstack
 -- @param user
 -- @param veloc
-function slingshot.on_use(itemstack, user, veloc, wear_rate)
+function slingshot.on_use(itemstack, user, veloc, wear_rate, damage_groups)
 	local pos = user:getpos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
@@ -90,7 +90,12 @@ function slingshot.on_use(itemstack, user, veloc, wear_rate)
 		e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
 		e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
 		e:get_luaentity().age = tmp_time
-		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name()})
+		
+		if damage_groups == nil then
+			damage_groups = {fleshy=1}
+		end
+		
+		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=damage_groups})
 		
 		if weapon_wear then
 			if wear_rate == nil then
@@ -149,7 +154,7 @@ function slingshot.register(name, def)
 				return itemstack
 			end
 			]]
-			slingshot.on_use(itemstack, user, def.velocity, def.wear_rate)
+			slingshot.on_use(itemstack, user, def.velocity, def.wear_rate, def.damage_groups)
 			return itemstack
 		end,
 	})
