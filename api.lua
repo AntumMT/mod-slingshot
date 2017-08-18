@@ -133,7 +133,7 @@ function slingshot.register(name, def)
 		wield_image = image,
 		
 		on_use = function(itemstack, user, pointed_thing)
-			--[[
+			--[[ Disabled picking up items with slingshot in hand
 			if pointed_thing.ref and pointed_thing.ref:is_player() == false and pointed_thing.ref:get_luaentity().name == '__builtin:item' then
 				pointed_thing.ref:punch(user, {full_punch_interval=1.0, damage_groups=def.damage_groups}, '', nil)
 				return itemstack
