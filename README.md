@@ -1,6 +1,8 @@
 # Slingshot Mod for Minetest
 
-### Description:
+
+---
+### **Description:**
 
 Adds a slingshot that can throw inventory items as ammunition.
 
@@ -15,7 +17,8 @@ Optional depends (soft):
 - technic
 
 
-### Licensing:
+---
+### **Licensing:**
 
 - Code
   - Original code by AiTechEye: [CC0][lic.cc0]
@@ -26,13 +29,16 @@ Optional depends (soft):
   - rubber band: [CC0][lic.cc0]
 
 
-### Functions:
+---
+### **Usage:**
 
-- *Right-click*: Changes ammo slot between left & right of slingshot
-- *Left-click*: Throws items from selected ammo slot
+- *Left-click*: Throws items from slot right of slingshot.
 
 
-### Crafting:
+---
+### **Crafting:**
+
+##### Legend:
 
 * `SI` = default:steel_ingot
 * `ST` = default:stick
@@ -40,29 +46,19 @@ Optional depends (soft):
 * `TR` = technic:rubber
 * `TL` = technic:raw_latex
 
-##### Craft recipes:
+##### Recipes:
 
-slingshot:
-
-    ╔════╦════╦════╗
-    ║ SI ║    ║ SI ║
-    ╠════╬════╬════╣
-    ║    ║ SI ║    ║
-    ╠════╬════╬════╣
-    ║    ║ SI ║    ║
-    ╚════╩════╩════╝
-
-slingshot (with technic):
+wooden slingshot:
 
     ╔════╦════╦════╗
-    ║ SI ║    ║ SI ║
+    ║ ST ║    ║ ST ║
     ╠════╬════╬════╣
-    ║    ║ SI ║    ║
+    ║    ║ ST ║    ║
     ╠════╬════╬════╣
-    ║    ║ SI ║    ║
+    ║    ║ ST ║    ║
     ╚════╩════╩════╝
 
-wood slingshot:
+wooden slingshot (rubber band required with technic):
 
     ╔════╦════╦════╗
     ║ ST ║ RB ║ ST ║
@@ -72,14 +68,24 @@ wood slingshot:
     ║    ║ ST ║    ║
     ╚════╩════╩════╝
 
-wood slingshot (with technic):
+iron slingshot:
 
     ╔════╦════╦════╗
-    ║ ST ║ RB ║ ST ║
+    ║ SI ║    ║ SI ║
     ╠════╬════╬════╣
-    ║    ║ ST ║    ║
+    ║    ║ SI ║    ║
     ╠════╬════╬════╣
-    ║    ║ ST ║    ║
+    ║    ║ SI ║    ║
+    ╚════╩════╩════╝
+
+iron slingshot (rubber band required with technic):
+
+    ╔════╦════╦════╗
+    ║ SI ║ RB ║ SI ║
+    ╠════╬════╬════╣
+    ║    ║ SI ║    ║
+    ╠════╬════╬════╣
+    ║    ║ SI ║    ║
     ╚════╩════╩════╝
 
 rubber band:
@@ -99,7 +105,9 @@ rubber band (shapeless):
     ╚════╝
 
 
-### Links:
+---
+### **Links:**
+
 - [HTML Reference](https://antummt.github.io/mod-slingshot/reference)
 
 
