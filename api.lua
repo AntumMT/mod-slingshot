@@ -34,6 +34,10 @@ function slingshot.logDebug(message)
 	end
 end
 
+--- @setting creative_mode
+--
+-- @see settings.creative_mode
+local creative = core.settings:get_bool('creative_mode')
 
 -- Enables/Disables wear/break of slingshots when used for attacking
 local weapon_wear = core.settings:get_bool('enable_weapon_wear') ~= false
@@ -102,7 +106,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 		
 		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=damage_groups})
 		
-		if weapon_wear then
+		if not creative and weapon_wear then
 			if wear_rate == nil then
 				wear_rate = 100
 			end
