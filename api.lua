@@ -39,7 +39,9 @@ end
 -- @see settings.creative_mode
 local creative = core.settings:get_bool('creative_mode')
 
--- Enables/Disables wear/break of slingshots when used for attacking
+--- @setting enable_weapon_wear
+--
+-- @see settings.enable_weapon_wear
 local weapon_wear = core.settings:get_bool('enable_weapon_wear') ~= false
 
 local tmp_throw = {}
