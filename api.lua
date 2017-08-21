@@ -106,17 +106,20 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 		
 		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=damage_groups})
 		
-		if not creative and weapon_wear then
-			if wear_rate == nil then
-				wear_rate = 100
+		if not creative then
+			if weapon_wear then
+				if wear_rate == nil then
+					wear_rate = 100
+				end
+				
+				slingshot.logDebug('Wear rate: ' .. tostring(wear_rate))
+				
+				itemstack:add_wear(wear_rate)
 			end
 			
-			slingshot.logDebug('Wear rate: ' .. tostring(wear_rate))
-			
-			itemstack:add_wear(wear_rate)
+			user:get_inventory():remove_item('main', item)
 		end
 		
-		user:get_inventory():remove_item('main', item)
 		core.sound_play('slingshot_throw', {pos=pos, gain=1.0, max_hear_distance=5,})
 		return itemstack
 	end
