@@ -13,10 +13,7 @@ The original code was extracted from [hook](https://forum.minetest.net/viewtopic
 - Code
 	- Original code by AiTechEye: [CC0][lic.cc0]
 	- Code by Jordan Irwin (AntumDeluge): [MIT][lic.mit]
-
-- Textures:
-	- slingshots: [CC0][lic.cc0]
-	- rubber band: [CC0][lic.cc0]
+- Textures: [CC0][lic.cc0]
 
 ### Requirements:
 
