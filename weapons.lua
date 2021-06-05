@@ -1,11 +1,12 @@
 -- Registrations for slinghot mod
 
 
+core.register_craftitem("slingshot:rubber_band", {
+	description = "Rubber band",
+	inventory_image = "slingshot_rubber_band.png",
+})
+
 if core.global_exists("technic") then
-	core.register_craftitem("slingshot:rubber_band", {
-		description = "Rubber band",
-		inventory_image = "slingshot_rubber_band.png",
-	})
 
 	core.register_craft({
 		output = "slingshot:rubber_band 20",
