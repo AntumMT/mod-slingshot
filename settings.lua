@@ -19,6 +19,13 @@
 --  @default true
 slingshot.require_rubber_band = core.settings:get_bool("slingshot.require_rubber_band", true)
 
+--- Use old 16x16 textures.
+--
+--  @setting slingshot.old_textures
+--  @settype bool
+--  @default false
+slingshot.old_textures = core.settings:get_bool("slingshot.old_textures", false)
+
 
 --- General settings.
 --
