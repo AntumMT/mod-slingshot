@@ -1,44 +1,37 @@
-# Slingshot Mod for Minetest
+## Slingshot for Minetest
 
-
----
-### **Description:**
+### Description:
 
 Adds a slingshot that can throw inventory items as ammunition.
 
-The original code was extracted from [hook][] mod by [AiTechEye][].
+The original code was extracted from [hook](https://forum.minetest.net/viewtopic.php?t=13634) mod by [AiTechEye](https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172).
 
 ![Screenshot](screenshot.png)
 
-Depends:
-- default
-
-Optional depends (soft):
-- technic
-
-
----
-### **Licensing:**
+### Licensing:
 
 - Code
-  - Original code by AiTechEye: [CC0][lic.cc0]
-  - Code by Jordan Irwin (AntumDeluge): [MIT][lic.mit]
+	- Original code by AiTechEye: [CC0][lic.cc0]
+	- Code by Jordan Irwin (AntumDeluge): [MIT][lic.mit]
 
 - Textures:
-  - slingshots: [CC0][lic.cc0]
-  - rubber band: [CC0][lic.cc0]
+	- slingshots: [CC0][lic.cc0]
+	- rubber band: [CC0][lic.cc0]
 
+### Requirements:
 
----
-### **Usage:**
+- Depends: [default](https://github.com/minetest/minetest_game/tree/master/mods/default)
+- Optional depends: [technic](https://content.minetest.net/packages/RealBadAngel/technic/)
+
+### Usage:
 
 - *Left-click*: Throws items from slot right of slingshot.
 
+#### Crafting:
 
----
-### **Crafting:**
+<details><summary>Spoiler</summary>
 
-##### Legend:
+**Legend:**
 
 * `SI` = default:steel_ingot
 * `ST` = default:stick
@@ -46,7 +39,7 @@ Optional depends (soft):
 * `TR` = technic:rubber
 * `TL` = technic:raw_latex
 
-##### Recipes:
+**Recipes:**
 
 wooden slingshot:
 
@@ -104,18 +97,16 @@ rubber band (shapeless):
     ║ TR ║
     ╚════╝
 
+</details>
 
----
-### **Links:**
+### Links:
 
+- [Forum](https://forum.minetest.net/viewtopic.php?t=18315)
+- [Git repo](https://github.com/AntumMT/mod-slingshot)
 - [HTML Reference](https://antummt.github.io/mod-slingshot/reference)
 - [Changelog](changelog.txt)
 - [TODO](TODO.txt)
 
-
-[AiTechEye]: https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172
-
-[hook]: https://forum.minetest.net/viewtopic.php?t=13634
 
 [lic.cc0]: LICENSE-cc0.txt
 [lic.mit]: LICENSE.txt
