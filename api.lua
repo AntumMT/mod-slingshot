@@ -14,6 +14,18 @@ function slingshot.register_ammo(name, damage)
 	registered_ammos[name] = damage
 end
 
+if slingshot.ammos and slingshot.ammos:trim() ~= "" then
+	local ammos = string.split(slingshot.ammos:trim(), ",")
+	for _, a in ipairs(ammos) do
+		if a:find("=") then
+			a = string.split(a, "=")
+			local aname = a[1]:trim()
+			local aval = tonumber(a[2]:trim()) or 0
+			slingshot.register_ammo(aname, aval)
+		end
+	end
+end
+
 
 -- Registers 'cooldown' time for repeat throws
 --

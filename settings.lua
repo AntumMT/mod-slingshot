@@ -26,6 +26,13 @@ slingshot.require_rubber_band = core.settings:get_bool("slingshot.require_rubber
 --  @default false
 slingshot.old_textures = core.settings:get_bool("slingshot.old_textures", false)
 
+--- Items with custom attack strengths when thrown with slingshot.
+--
+--  @setting slingshot.ammos
+--  @settype string
+--  @default default:mese_crystal=5
+slingshot.ammos = core.settings:get("slingshot.ammos") or "default:mese_crystal=5"
+
 
 --- General settings.
 --

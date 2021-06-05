@@ -5,6 +5,9 @@ slingshot.require_rubber_band (Require rubber band in craft recipe) bool true
 # Use old 16x16 textures.
 slingshot.old_textures (Old slingshot textures) bool false
 
+# Items with custom attack strengths when thrown with slingshot.
+slingshot.ammos (Registered ammos) string default:mese_crystal=5
+
 # Enables/Disables wear when used.
 enable_weapon_wear (Weapon wear) bool true
 
