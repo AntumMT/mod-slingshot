@@ -5,3 +5,4 @@ TODO:
 - add localization support
 - fix setting default entity duration value (item_entity_ttl) to 900, same as minetest.conf.example
 - don't use "on_globalstep" to ensure hit
+- add "description.txt" & "depends.txt" for 0.4.16 compat
