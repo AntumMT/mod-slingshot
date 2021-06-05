@@ -2,3 +2,4 @@
 TODO:
 - make repairable with workbench
 - possibly convert to use a throwing API
+- add localization support
