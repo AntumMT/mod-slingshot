@@ -26,14 +26,15 @@
 <br/>
 <h1>Slingshot</h1>
 
+
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Common_Settings">Common Settings </a></li>
-<li><a href="#Unique_Settings">Unique Settings </a></li>
+<li><a href="#Slingshot_specicif_settings">Slingshot specicif settings </a></li>
+<li><a href="#General_settings">General settings </a></li>
 </ul>
 
 
@@ -49,84 +50,54 @@
 
 <h1>Module <code>settings</code></h1>
 <p>Slingshot mod settings.</p>
-<p></p>
+<p>
+
+</p>
 
 
-<h2><a href="#Common_Settings">Common Settings </a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#creative_mode">creative_mode</a></td>
-	<td class="summary">Determines if game is being run in creative mode.</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#enable_weapon_wear">enable_weapon_wear</a></td>
-	<td class="summary">Enables/Disables wear/break of slingshots when used for attacking.</td>
-	</tr>
-</table>
-<h2><a href="#Unique_Settings">Unique Settings </a></h2>
+<h2><a href="#Slingshot_specicif_settings">Slingshot specicif settings </a></h2>
 <table class="function_list">
 	<tr>
 	<td class="name" ><a href="#slingshot.require_rubber_band">slingshot.require_rubber_band</a></td>
 	<td class="summary">Require rubber band for slingshot craft recipe.</td>
 	</tr>
 </table>
+<h2><a href="#General_settings">General settings </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" ><a href="#enable_weapon_wear">enable_weapon_wear</a></td>
+	<td class="summary">Enables/Disables wear when used.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#log_mods">log_mods</a></td>
+	<td class="summary">Log extra messages.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#enable_debug_mods">enable_debug_mods</a></td>
+	<td class="summary">Log extra debug messages.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#creative_mode">creative_mode</a></td>
+	<td class="summary">Determines if game is being run in creative mode.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#item_entity_ttl">item_entity_ttl</a></td>
+	<td class="summary">Time in seconds for item entity (dropped items) to live.</td>
+	</tr>
+	<tr>
+	<td class="name" ><a href="#enable_pvp">enable_pvp</a></td>
+	<td class="summary">Determines if PVP is enabled.</td>
+	</tr>
+</table>
 
 <br/>
 <br/>
 
 
-    <h2 class="section-header has-description"><a name="Common_Settings"></a>Common Settings </h2>
+    <h2 class="section-header has-description"><a name="Slingshot_specicif_settings"></a>Slingshot specicif settings </h2>
 
           <div class="section-description">
-           Settings shared with other mods.
-          </div>
-    <dl class="function">
-    <dt>
-    <a name = "creative_mode"></a>
-    <strong>creative_mode</strong>
-    </dt>
-    <dd>
-    Determines if game is being run in creative mode.
-
-    <h3>Type:</h3>
-    <ul>
-         <i>bool</i>
-    </ul>
-    </ul>
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "enable_weapon_wear"></a>
-    <strong>enable_weapon_wear</strong>
-    </dt>
-    <dd>
-    Enables/Disables wear/break of slingshots when used for attacking.
-
-    <h3>Type:</h3>
-    <ul>
-         <i>bool</i>
-    </ul>
-    <h3>Default:</h3>
-    <ul>
-         <i>true</i>
-    </ul>
-
-
-
-
-
-
-</dd>
-</dl>
-    <h2 class="section-header has-description"><a name="Unique_Settings"></a>Unique Settings </h2>
-
-          <div class="section-description">
-           Settings unique to this mod.
+            Settings unique to this mod.
           </div>
     <dl class="function">
     <dt>
@@ -152,13 +123,154 @@
 
 </dd>
 </dl>
+    <h2 class="section-header has-description"><a name="General_settings"></a>General settings </h2>
+
+          <div class="section-description">
+            Settings commom to core &amp; other mods.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "enable_weapon_wear"></a>
+    <strong>enable_weapon_wear</strong>
+    </dt>
+    <dd>
+    Enables/Disables wear when used.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>bool</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>true</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "log_mods"></a>
+    <strong>log_mods</strong>
+    </dt>
+    <dd>
+    Log extra messages.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>bool</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>false</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "enable_debug_mods"></a>
+    <strong>enable_debug_mods</strong>
+    </dt>
+    <dd>
+    Log extra debug messages.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>bool</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>false</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "creative_mode"></a>
+    <strong>creative_mode</strong>
+    </dt>
+    <dd>
+    Determines if game is being run in creative mode.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>bool</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>false</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "item_entity_ttl"></a>
+    <strong>item_entity_ttl</strong>
+    </dt>
+    <dd>
+    Time in seconds for item entity (dropped items) to live. </p>
+
+<p>  Setting it to -1 disables the feature.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>int</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>900</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "enable_pvp"></a>
+    <strong>enable_pvp</strong>
+    </dt>
+    <dd>
+    Determines if PVP is enabled.
+
+    <h3>Type:</h3>
+    <ul>
+         <i>bool</i>
+    </ul>
+    <h3>Default:</h3>
+    <ul>
+         <i>false</i>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
 
 
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/antum">LDoc 1.4.6-antum-dev</a></i>
-<i style="float:right;">Last updated 2017-08-21 15:53:23 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-06-05 10:44:03 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

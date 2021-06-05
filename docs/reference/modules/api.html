@@ -26,13 +26,13 @@
 <br/>
 <h1>Slingshot</h1>
 
+
 <ul>
   <li><a href="../index.html">Index</a></li>
 </ul>
 
 <h2>Contents</h2>
 <ul>
-<li><a href="#Configuration_Settings">Configuration Settings</a></li>
 <li><a href="#Functions">Functions</a></li>
 <li><a href="#Function_Definition_Tables">Function Definition Tables </a></li>
 </ul>
@@ -50,30 +50,13 @@
 
 <h1>Module <code>api</code></h1>
 <p>Slingshot mod API.</p>
-<p></p>
+<p>
+
+</p>
 
 
-<h2><a href="#Configuration_Settings">Configuration Settings</a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" ><a href="#creative_mode">creative_mode</a></td>
-	<td class="summary"></td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#enable_weapon_wear">enable_weapon_wear</a></td>
-	<td class="summary"></td>
-	</tr>
-</table>
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
-	<tr>
-	<td class="name" ><a href="#slingshot.log">slingshot.log (message)</a></td>
-	<td class="summary">Info log message</td>
-	</tr>
-	<tr>
-	<td class="name" ><a href="#slingshot.logDebug">slingshot.logDebug (message)</a></td>
-	<td class="summary">Debug log message.</td>
-	</tr>
 	<tr>
 	<td class="name" ><a href="#slingshot.register">slingshot.register (name, def)</a></td>
 	<td class="summary">Registers a new slingshot.</td>
@@ -91,109 +74,17 @@
 <br/>
 
 
-    <h2 class="section-header "><a name="Configuration_Settings"></a>Configuration Settings</h2>
-
-    <dl class="function">
-    <dt>
-    <a name = "creative_mode"></a>
-    <strong>creative_mode</strong>
-    </dt>
-    <dd>
-
-
-    </ul>
-    </ul>
-
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/settings.html#creative_mode">settings.creative_mode</a>
-    </ul>
-
-
-</dd>
-    <dt>
-    <a name = "enable_weapon_wear"></a>
-    <strong>enable_weapon_wear</strong>
-    </dt>
-    <dd>
-
-
-    </ul>
-    </ul>
-
-
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../modules/settings.html#enable_weapon_wear">settings.enable_weapon_wear</a>
-    </ul>
-
-
-</dd>
-</dl>
     <h2 class="section-header "><a name="Functions"></a>Functions</h2>
 
     <dl class="function">
-    <dt>
-    <a name = "slingshot.log"></a>
-    <strong>slingshot.log (message)</strong>
-    </dt>
-    <dd>
-    Info log message  Logs &lsquo;info&rsquo; message if &lsquo;log_message&rsquo; setting set to &lsquo;true&rsquo;.
-
-    </ul>
-    </ul>
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">message</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Message to be logged.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "slingshot.logDebug"></a>
-    <strong>slingshot.logDebug (message)</strong>
-    </dt>
-    <dd>
-    Debug log message.</p>
-
-<p> Logs &lsquo;info&rsquo; message if &lsquo;debug_log_level&rsquo; setting set to &lsquo;verbose&rsquo;.
-
-    </ul>
-    </ul>
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">message</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Message to be logged.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
     <dt>
     <a name = "slingshot.register"></a>
     <strong>slingshot.register (name, def)</strong>
     </dt>
     <dd>
-    Registers a new slingshot.</p>
+    Registers a new slingshot. </p>
 
-<p> &lsquo;def&rsquo; should include &lsquo;description&rsquo;, &lsquo;damage_groups&rsquo;, &amp; &lsquo;velocity&rsquo;.
+<p>  'def' should include 'description', 'damage_groups', &amp; 'velocity'.
 
     </ul>
     </ul>
@@ -201,11 +92,11 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">name</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Name of the slingshot (e.g. <strong><em>&ldquo;iron&rdquo;</em></strong>).
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Name of the slingshot (e.g. <strong><em>"iron"</em></strong>).
         </li>
         <li><span class="parameter">def</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          Slingshot definition table (see <a href="#slingshot.register.def">slingshot.register.def</a>).
         </li>
     </ul>
@@ -232,14 +123,16 @@
     <h3>Fields:</h3>
     <ul>
         <li><span class="parameter">description</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         Human-readable description of slingshot (e.g. <strong><em>&ldquo;Wooden Slinghot&rdquo;</em></strong>).
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Human-readable description of slingshot (e.g. <strong><em>"Wooden Slinghot"</em></strong>).
         </li>
         <li><span class="parameter">damage_groups</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
-        <ul>
-<li>Same as <a href="https://github.com/minetest/minetest/blob/71b02d6/doc/lua_api.txt#L1551">minetest.register_tool.tool_capabilities.damage_groups</a></li>
-<li>Default: {fleshy=1}</li>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+<ul>
+    <li>Same as <a href="https://github.com/minetest/minetest/blob/71b02d6/doc/lua_api.txt#L1551">minetest.register<em>tool.tool</em>capabilities.damage_groups</a></li>
+    <li>Default: {fleshy=1}</li>
 </ul>
 
         </li>
@@ -252,15 +145,15 @@
          Rate at which the slingshot will wear &amp; break.
         </li>
         <li><span class="parameter">recipe</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          A custom recipe to use for crafting.
         </li>
         <li><span class="parameter">ingredient</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
          Creates a standard craft recipe using this ingredient (overrides <strong><em>recipe</em></strong>).
         </li>
         <li><span class="parameter">aliases</span>
-            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
          List of item names that should be uses as aliases for this slingshot.
         </li>
     </ul>
@@ -280,8 +173,8 @@
 </div> <!-- id="content" -->
 </div> <!-- id="main" -->
 <div id="about">
-<i>generated by <a href="http://github.com/AntumDeluge/LDoc/tree/antum">LDoc 1.4.6-antum-dev</a></i>
-<i style="float:right;">Last updated 2017-08-21 15:53:23 </i>
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2021-06-05 10:44:03 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>
