@@ -15,12 +15,10 @@ local log_header = "[" .. slingshot.modname .. "] "
 --  @function slingshot.log
 --  @tparam string message Message to be logged.
 function slingshot.log(message)
-	if core.settings:get_bool("log_mods") then
+	if slingshot.log_mods then
 		core.log("info", log_header .. message)
 	end
 end
-
-local debug = core.settings:get_bool("enable_debug_mods") == true
 
 --- Debug log message.
 --
@@ -29,24 +27,14 @@ local debug = core.settings:get_bool("enable_debug_mods") == true
 --  @function slingshot.logDebug
 --  @tparam string message Message to be logged.
 function slingshot.logDebug(message)
-	if debug then
+	if slingshot.debug then
 		core.log(log_header .. "DEBUG: " .. message)
 	end
 end
 
---- @setting creative_mode
---
---  @see settings.creative_mode
-local creative = core.settings:get_bool("creative_mode")
-
---- @setting enable_weapon_wear
---
---  @see settings.enable_weapon_wear
-local weapon_wear = core.settings:get_bool("enable_weapon_wear") ~= false
 
 local tmp_throw = {}
 local tmp_throw_timer = 0
-local tmp_time = tonumber(core.settings:get("item_entity_ttl")) or 890
 
 
 -- Registers 'cooldown' time for repeat throws
@@ -63,7 +51,7 @@ core.register_globalstep(function(dtime)
 		for ii, ob in pairs(core.get_objects_inside_radius(t.ob:getpos(), 1.5)) do
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= "__builtin:item")) then
 				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
-				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and core.settings:get_bool("enable_pvp") == true) then
+				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and slingshot.enable_pvp) then
 					ob:punch(puncher, 1.0, {damage_groups=t.damage_groups}, nil)
 					t.ob:setvelocity({x=0, y=0, z=0})
 					t.ob:setacceleration({x=0, y=-10, z=0})
@@ -100,7 +88,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 	if e then
 		e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
 		e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
-		e:get_luaentity().age = tmp_time
+		e:get_luaentity().age = slingshot.thrown_duration
 
 		if damage_groups == nil then
 			damage_groups = {fleshy=1}
@@ -108,8 +96,8 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 
 		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=damage_groups})
 
-		if not creative then
-			if weapon_wear then
+		if not slingshot.creative then
+			if slingshot.enable_wear then
 				if wear_rate == nil then
 					wear_rate = 100
 				end
