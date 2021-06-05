@@ -1,4 +1,9 @@
 
+v0.3
+----
+- added new textures
+- rubber band item is registered even if technic not available
+
 v0.2
 ----
 - custom images can be used for registering new slingshot
