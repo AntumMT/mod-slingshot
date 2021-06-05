@@ -19,17 +19,17 @@ core.register_globalstep(function(dtime)
 	for i, t in pairs(tmp_throw) do
 		local puncher = core.get_player_by_name(t.user)
 		t.timer = t.timer-0.25
-		if t.timer <= 0 or t.ob == nil or t.ob:getpos() == nil then table.remove(tmp_throw, i) return end
-		for ii, ob in pairs(core.get_objects_inside_radius(t.ob:getpos(), 1.5)) do
+		if t.timer <= 0 or t.ob == nil or t.ob:get_pos() == nil then table.remove(tmp_throw, i) return end
+		for ii, ob in pairs(core.get_objects_inside_radius(t.ob:get_pos(), 1.5)) do
 			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= "__builtin:item")) then
 				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
 				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and slingshot.enable_pvp) then
 					ob:punch(puncher, 1.0, {damage_groups=t.damage_groups}, nil)
-					t.ob:setvelocity({x=0, y=0, z=0})
-					t.ob:setacceleration({x=0, y=-10, z=0})
-					t.ob:setvelocity({x=0, y=-10, z=0})
+					t.ob:set_velocity({x=0, y=0, z=0})
+					t.ob:set_acceleration({x=0, y=-10, z=0})
+					t.ob:set_velocity({x=0, y=-10, z=0})
 					table.remove(tmp_throw, i)
-					core.sound_play("slingshot_hard_punch", {pos=ob:getpos(), gain=1.0, max_hear_distance=5,})
+					core.sound_play("slingshot_hard_punch", {pos=ob:get_pos(), gain=1.0, max_hear_distance=5,})
 					break
 				end
 			end
@@ -46,7 +46,7 @@ end)
 --  @param user
 --  @param veloc
 local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
-	local pos = user:getpos()
+	local pos = user:get_pos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
 	local item = itemstack:to_table()
@@ -58,8 +58,8 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 
 	local e = core.add_item({x=pos.x, y=pos.y+2, z=pos.z}, item)
 	if e then
-		e:setvelocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
-		e:setacceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
+		e:set_velocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
+		e:set_acceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
 		e:get_luaentity().age = slingshot.thrown_duration
 
 		if damage_groups == nil then
