@@ -68,8 +68,8 @@ slingshot.creative = core.settings:get_bool("creative_mode", false)
 --
 --  @setting item_entity_ttl
 --  @settype int
---  @default 900
-slingshot.thrown_duration = tonumber(core.settings:get("item_entity_ttl")) or 900
+--  @default 890
+slingshot.thrown_duration = tonumber(core.settings:get("item_entity_ttl")) or 890
 
 --- Determines if PVP is enabled.
 --
