@@ -5,7 +5,7 @@
 --  @module settings
 
 
---- Slingshot specicif settings.
+--- Slingshot specific settings.
 --
 --  Settings unique to this mod.
 --
