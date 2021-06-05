@@ -1,6 +1,5 @@
 
 TODO:
-- make repairable with workbench
 - possibly convert to use a throwing API
 - add localization support
 - fix setting default entity duration value (item_entity_ttl) to 900, same as minetest.conf.example

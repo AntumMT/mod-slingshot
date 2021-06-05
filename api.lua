@@ -152,7 +152,9 @@ function slingshot.register(name, def)
 		def.wield_image = def.image
 	end
 
-	core.register_tool("slingshot:" .. name, {
+	local sname = "slingshot:" .. name
+
+	core.register_tool(sname, {
 		description = def.description,
 		range = 4,
 		inventory_image = def.image,
@@ -169,6 +171,10 @@ function slingshot.register(name, def)
 			return itemstack
 		end,
 	})
+
+	if core.global_exists("WB") and WB.register_repairable then
+		WB:register_repairable(sname)
+	end
 
 	-- def.ingredient overrides def.recipe
 	if def.ingredient ~= nil then
