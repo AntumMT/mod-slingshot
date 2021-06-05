@@ -103,7 +103,7 @@ rubber band (shapeless):
 
 - [Forum](https://forum.minetest.net/viewtopic.php?t=18315)
 - [Git repo](https://github.com/AntumMT/mod-slingshot)
-- [HTML Reference](https://antummt.github.io/mod-slingshot/reference)
+- [API](https://antummt.github.io/mod-slingshot/docs/api.html)
 - [Changelog](changelog.txt)
 - [TODO](TODO.txt)
 
