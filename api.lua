@@ -10,6 +10,14 @@ local tmp_throw_timer = 0
 
 local registered_ammos = {}
 
+--- Register an item as ammunition for slingshot.
+--
+--  Any item can be thrown, but registering as ammo
+--  allows custom attack value to be set.
+--
+--  @function slingshot.register_ammo
+--  @tparam string name Item technical name.
+--  @tparam int damage Damage value addon.
 function slingshot.register_ammo(name, damage)
 	registered_ammos[name] = damage
 end
