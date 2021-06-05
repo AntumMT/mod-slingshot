@@ -5,34 +5,6 @@
 --  @module api
 
 
--- Displays mod name in square brackets at beginning of log messages
-local log_header = "[" .. slingshot.modname .. "] "
-
---- Info log message
---
---  Logs 'info' message if 'log_message' setting set to 'true'.
---
---  @function slingshot.log
---  @tparam string message Message to be logged.
-function slingshot.log(message)
-	if slingshot.log_mods then
-		core.log("info", log_header .. message)
-	end
-end
-
---- Debug log message.
---
---  Logs 'info' message if 'debug_log_level' setting set to 'verbose'.
---
---  @function slingshot.logDebug
---  @tparam string message Message to be logged.
-function slingshot.logDebug(message)
-	if slingshot.debug then
-		core.log(log_header .. "DEBUG: " .. message)
-	end
-end
-
-
 local tmp_throw = {}
 local tmp_throw_timer = 0
 
@@ -102,7 +74,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 					wear_rate = 100
 				end
 
-				slingshot.logDebug("Wear rate: " .. tostring(wear_rate))
+				slingshot.log("debug", "Wear rate: " .. tostring(wear_rate))
 
 				itemstack:add_wear(wear_rate)
 			end
