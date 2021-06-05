@@ -16,7 +16,7 @@ creative_mode (Creative) bool false
 
 # Time in seconds for item entity (dropped items) to live.
 # Setting it to -1 disables the feature.
-item_entity_ttl (Thrown item duration) int 890 -1
+item_entity_ttl (Thrown item duration) int 900 -1
 
 # Determines if PVP is enabled.
 enable_pvp (Enable PVP) bool false
