@@ -75,5 +75,5 @@ slingshot.thrown_duration = tonumber(core.settings:get("item_entity_ttl")) or 89
 --
 --  @setting enable_pvp
 --  @settype bool
---  @default false
-slingshot.enable_pvp = core.settings:get_bool("enable_pvp", false)
+--  @default true
+slingshot.enable_pvp = core.settings:get_bool("enable_pvp", true)

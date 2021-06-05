@@ -22,4 +22,4 @@ creative_mode (Creative) bool false
 item_entity_ttl (Thrown item duration) int 890 -1
 
 # Determines if PVP is enabled.
-enable_pvp (Enable PVP) bool false
+enable_pvp (Enable PVP) bool true
