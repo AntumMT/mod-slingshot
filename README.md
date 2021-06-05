@@ -109,6 +109,7 @@ rubber band (shapeless):
 ### **Links:**
 
 - [HTML Reference](https://antummt.github.io/mod-slingshot/reference)
+- [Changelog](changelog.txt)
 
 
 [AiTechEye]: https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172
