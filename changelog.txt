@@ -3,6 +3,7 @@ v0.3
 ----
 - added new textures
 - rubber band item is registered even if technic not available
+- items can be registered as ammos with custom attack values
 
 v0.2
 ----

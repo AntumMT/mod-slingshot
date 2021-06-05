@@ -8,8 +8,16 @@
 local tmp_throw = {}
 local tmp_throw_timer = 0
 
+local registered_ammos = {}
+
+function slingshot.register_ammo(name, damage)
+	registered_ammos[name] = damage
+end
+
 
 -- Registers 'cooldown' time for repeat throws
+--
+-- FIXME: using  on_globalstep causes attack to miss when in sync
 core.register_globalstep(function(dtime)
 	tmp_throw_timer = tmp_throw_timer + dtime
 	if tmp_throw_timer < 0.2 then return end
@@ -62,11 +70,20 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 		e:set_acceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
 		e:get_luaentity().age = slingshot.thrown_duration
 
-		if damage_groups == nil then
-			damage_groups = {fleshy=1}
+		local dg = table.copy(damage_groups)
+
+		if dg == nil then
+			dg = {fleshy=1}
 		end
 
-		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=damage_groups})
+		local addon = registered_ammos[item]
+		if addon then
+			for k, v in pairs(dg) do
+				dg[k] = v + addon
+			end
+		end
+
+		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=dg})
 
 		if not slingshot.creative then
 			if slingshot.enable_wear then
