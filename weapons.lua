@@ -74,7 +74,7 @@ slingshot.register("iron", {
 	velocity = 15,
 	wear_rate = 250,
 })
-for _, a in ipairs({slingshot.modname, slingshot.modname .. ":slingshot", "iron_slingshot"}) do
+for _, a in ipairs({slingshot.modname .. ":slingshot", "iron_slingshot"}) do
 	core.register_alias(a, slingshot.modname .. ":iron")
 end
 
