@@ -16,7 +16,7 @@ end
 
 
 local rubber_available = core.registered_items["technic:rubber"] ~= nil
-local latex_available = core.registered_items["technic:raw_latext"] ~= nil
+local latex_available = core.registered_items["technic:raw_latex"] ~= nil
 
 if rubber_available or latex_available then
 	core.register_craftitem("slingshot:rubber_band", {
