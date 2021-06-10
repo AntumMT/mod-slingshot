@@ -45,12 +45,6 @@ if latex_available then
 end
 
 
-local ing_1 = "group:stick"
-local ing_2 = ""
-if core.registered_items["slingshot:rubber_band"] then
-	ing_2 = "slingshot:rubber_band"
-end
-
 -- A wooden slingshot
 slingshot.register("wood", {
 	description = S("Wooden Slingshot"),
@@ -63,6 +57,12 @@ for _, a in ipairs({slingshot.modname .. ":wooden", "wood_slingshot", "wooden_sl
 	core.register_alias(a, slingshot.modname .. ":wood")
 end
 
+local ing_1 = "group:stick"
+local ing_2 = ""
+if core.registered_items["slingshot:rubber_band"] then
+	ing_2 = "slingshot:rubber_band"
+end
+
 core.register_craft({
 	output = slingshot.modname .. ":wood",
 	recipe = {
@@ -72,8 +72,6 @@ core.register_craft({
 	}
 })
 
-
-ing_1 = "default:steel_ingot"
 
 -- A stronger iron slingshot
 slingshot.register("iron", {
@@ -87,11 +85,15 @@ for _, a in ipairs({slingshot.modname .. ":slingshot", "iron_slingshot"}) do
 	core.register_alias(a, slingshot.modname .. ":iron")
 end
 
-core.register_craft({
-	output = slingshot.modname .. ":iron",
-	recipe = {
-		{ing_1, ing_2, ing_1},
-		{"", ing_1, ""},
-		{"", ing_1, ""},
-	}
-})
+if core.registered_items["default:steel_ingot"] then
+	ing_1 = "default:steel_ingot"
+
+	core.register_craft({
+		output = slingshot.modname .. ":iron",
+		recipe = {
+			{ing_1, ing_2, ing_1},
+			{"", ing_1, ""},
+			{"", ing_1, ""},
+		}
+	})
+end
