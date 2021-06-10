@@ -101,6 +101,21 @@ rubber band (shapeless):
 
 </details>
 
+#### Settings:
+
+```
+slingshot.old_textures
+	- Use old 16x16 textures.
+	- type:    bool
+	- default: false
+
+slingshot.ammos
+	- Value of these items will be added to slingshot attack when thrown.
+	- type:    string (comma-separated key=value list)
+	- default: default:mese_crystal=5
+```
+
+
 ### Links:
 
 - [Forum](https://forum.minetest.net/viewtopic.php?t=18315)
