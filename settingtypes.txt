@@ -2,7 +2,7 @@
 # Use old 16x16 textures.
 slingshot.old_textures (Old slingshot textures) bool false
 
-# Items with custom attack strengths when thrown with slingshot.
+# Value of these items will be added to slingshot attack when thrown.
 slingshot.ammos (Registered ammos) string default:mese_crystal=5
 
 # Enables/Disables wear when used.

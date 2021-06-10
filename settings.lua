@@ -19,7 +19,7 @@
 --  @default false
 slingshot.old_textures = core.settings:get_bool("slingshot.old_textures", false)
 
---- Items with custom attack strengths when thrown with slingshot.
+--- Value of these items will be added to slingshot attack when thrown.
 --
 --  @setting slingshot.ammos
 --  @settype string
