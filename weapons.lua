@@ -13,18 +13,25 @@ if slingshot.old_textures then
 end
 
 
-core.register_craftitem("slingshot:rubber_band", {
-	description = "Rubber band",
-	inventory_image = "slingshot_" .. textures.rubber_band .. ".png",
-})
+local rubber_available = core.registered_items["technic:rubber"] ~= nil
+local latex_available = core.registered_items["technic:raw_latext"] ~= nil
 
-if core.global_exists("technic") then
+if rubber_available or latex_available then
+	core.register_craftitem("slingshot:rubber_band", {
+		description = "Rubber band",
+		inventory_image = "slingshot_" .. textures.rubber_band .. ".png",
+	})
+end
+
+if rubber_available then
 	core.register_craft({
 		output = "slingshot:rubber_band 6",
 		type = "shapeless",
 		recipe = {"technic:rubber"},
 	})
+end
 
+if latex_available then
 	core.register_craft({
 		output = "slingshot:rubber_band 2",
 		recipe = {
@@ -38,7 +45,7 @@ end
 
 local ing_1 = "group:stick"
 local ing_2 = ""
-if core.global_exists("technic") and slingshot.require_rubber_band then
+if core.registered_items["slingshot:rubber_band"] then
 	ing_2 = "slingshot:rubber_band"
 end
 

@@ -39,8 +39,3 @@ local scripts = {
 for index, script in ipairs(scripts) do
 	dofile(slingshot.modpath .. "/" .. script .. ".lua")
 end
-
-
-if slingshot.log_mods then
-	core.log("action", "[slingshot] Require rubber band: " .. tostring(slingshot.require_rubber_band))
-end

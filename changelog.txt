@@ -7,6 +7,7 @@ v0.3
 - slingshots can be repaired with workbench if "xdecor.register_repairable" method available
 - craft recipes & aliases no longer registered with slingshot registration
 - technic:rubber outputs 6 rubber bands instead of 10
+- detect automatically if rubber band can be used instead of setting slingshot.require_rubber_band
 
 v0.2
 ----

@@ -12,13 +12,6 @@
 --  @section settings_specific
 
 
---- Require rubber band for slingshot craft recipe.
---
---  @setting slingshot.require_rubber_band
---  @settype bool
---  @default true
-slingshot.require_rubber_band = core.settings:get_bool("slingshot.require_rubber_band", true)
-
 --- Use old 16x16 textures.
 --
 --  @setting slingshot.old_textures

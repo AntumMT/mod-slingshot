@@ -1,7 +1,4 @@
 
-# Require rubber band as additional ingredient in slingshot craft recipes.
-slingshot.require_rubber_band (Require rubber band in craft recipe) bool true
-
 # Use old 16x16 textures.
 slingshot.old_textures (Old slingshot textures) bool false
 
