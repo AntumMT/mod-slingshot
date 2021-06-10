@@ -184,32 +184,6 @@ function slingshot.register(name, def)
 
 	if register_repairable then register_repairable(nil, sname) end
 
-	-- def.ingredient overrides def.recipe
-	if def.ingredient ~= nil then
-		if slingshot.require_rubber_band and core.global_exists("technic") then
-			-- More complicated recipe for technic
-			def.recipe = {
-				{def.ingredient, "slingshot:rubber_band", def.ingredient},
-				{"", def.ingredient, ""},
-				{"", def.ingredient, ""},
-			}
-		else
-			def.recipe = {
-				{def.ingredient, "", def.ingredient},
-				{"", def.ingredient, ""},
-				{"", def.ingredient, ""},
-			}
-		end
-	end
-
-	-- Optional register a craft recipe
-	if def.recipe ~= nil then
-		core.register_craft({
-			output = "slingshot:" .. name,
-			recipe = def.recipe,
-		})
-	end
-
 	-- Optionally register aliases
 	if def.aliases ~= nil then
 		for index, alias in ipairs(def.aliases) do
@@ -232,7 +206,5 @@ end
 --  - Default: {fleshy=1}
 --  @tfield int velocity Speed & distance at which items will be thrown.
 --  @tfield int wear_rate Rate at which the slingshot will wear & break.
---  @tfield table recipe A custom recipe to use for crafting.
---  @tfield string ingredient Creates a standard craft recipe using this ingredient (overrides ***recipe***).
 --  @tfield table aliases List of item names that should be uses as aliases for this slingshot.
 --  @see slingshot.register

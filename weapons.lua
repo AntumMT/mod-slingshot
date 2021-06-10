@@ -36,6 +36,12 @@ if core.global_exists("technic") then
 end
 
 
+local ing_1 = "group:stick"
+local ing_2 = ""
+if core.global_exists("technic") and slingshot.require_rubber_band then
+	ing_2 = "slingshot:rubber_band"
+end
+
 -- A wooden slingshot
 slingshot.register("wood", {
 	description = "Wooden slingshot",
@@ -43,7 +49,6 @@ slingshot.register("wood", {
 	damage_groups = {fleshy=1},
 	velocity = 10,
 	wear_rate = 500,
-	ingredient = "group:stick",
 	aliases = {
 		slingshot.modname .. ":wooden",
 		"wood_slingshot",
@@ -51,6 +56,17 @@ slingshot.register("wood", {
 	}
 })
 
+core.register_craft({
+	output = slingshot.modname .. ":wood",
+	recipe = {
+		{ing_1, ing_2, ing_1},
+		{"", ing_1, ""},
+		{"", ing_1, ""},
+	}
+})
+
+
+ing_1 = "default:steel_ingot"
 
 -- A stronger iron slingshot
 slingshot.register("iron", {
@@ -59,10 +75,18 @@ slingshot.register("iron", {
 	damage_groups = {fleshy=3},
 	velocity = 15,
 	wear_rate = 250,
-	ingredient = "default:steel_ingot",
 	aliases = {
 		slingshot.modname,
 		slingshot.modname .. ":slingshot",
 		"iron_slingshot",
 	},
+})
+
+core.register_craft({
+	output = slingshot.modname .. ":iron",
+	recipe = {
+		{ing_1, ing_2, ing_1},
+		{"", ing_1, ""},
+		{"", ing_1, ""},
+	}
 })
