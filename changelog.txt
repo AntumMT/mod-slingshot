@@ -4,7 +4,8 @@ v0.3
 - added new textures
 - rubber band item is registered even if technic not available
 - items can be registered as ammos with custom attack values
-- slingshots can be repaired with workbench if "WB.register_repairable" method available
+- slingshots can be repaired with workbench if "xdecor.register_repairable" method available
+- craft recipes & aliases no longer registered with slingshot registration
 
 v0.2
 ----
