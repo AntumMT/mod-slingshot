@@ -118,6 +118,7 @@ slingshot.ammos
 
 ### Links:
 
+- [![ContentDB](https://content.minetest.net/packages/AntumDeluge/slingshot/shields/title/)](https://content.minetest.net/packages/AntumDeluge/slingshot/)
 - [Forum](https://forum.minetest.net/viewtopic.php?t=18315)
 - [Git repo](https://github.com/AntumMT/mod-slingshot)
 - [API](https://antummt.github.io/mod-slingshot/docs/api.html)
