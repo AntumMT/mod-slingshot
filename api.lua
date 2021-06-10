@@ -183,13 +183,6 @@ function slingshot.register(name, def)
 	})
 
 	if register_repairable then register_repairable(nil, sname) end
-
-	-- Optionally register aliases
-	if def.aliases ~= nil then
-		for index, alias in ipairs(def.aliases) do
-			core.register_alias(alias, "slingshot:" .. name)
-		end
-	end
 end
 
 

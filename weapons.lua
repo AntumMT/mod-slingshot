@@ -49,12 +49,10 @@ slingshot.register("wood", {
 	damage_groups = {fleshy=1},
 	velocity = 10,
 	wear_rate = 500,
-	aliases = {
-		slingshot.modname .. ":wooden",
-		"wood_slingshot",
-		"wooden_slingshot",
-	}
 })
+for _, a in ipairs({slingshot.modname .. ":wooden", "wood_slingshot", "wooden_slingshot"}) do
+	core.register_alias(a, slingshot.modname .. ":wood")
+end
 
 core.register_craft({
 	output = slingshot.modname .. ":wood",
@@ -75,12 +73,10 @@ slingshot.register("iron", {
 	damage_groups = {fleshy=3},
 	velocity = 15,
 	wear_rate = 250,
-	aliases = {
-		slingshot.modname,
-		slingshot.modname .. ":slingshot",
-		"iron_slingshot",
-	},
 })
+for _, a in ipairs({slingshot.modname, slingshot.modname .. ":slingshot", "iron_slingshot"}) do
+	core.register_alias(a, slingshot.modname .. ":iron")
+end
 
 core.register_craft({
 	output = slingshot.modname .. ":iron",
