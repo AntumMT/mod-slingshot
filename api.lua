@@ -125,6 +125,16 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 end
 
 
+local register_repairable
+if core.global_exists("xdecor") and xdecor.register_repairable then
+	register_repairable = xdecor.register_repairable
+elseif core.global_exists("workbench") and workbench.register_repairable then
+	register_repairable = workbench.register_repairable
+elseif core.global_exists("WB") and WB.register_repairable then
+	register_repairable = WB.register_repairable
+end
+
+
 --- Registers a new slingshot.
 --
 --  'def' should include 'description', 'damage_groups', & 'velocity'.
@@ -172,9 +182,7 @@ function slingshot.register(name, def)
 		end,
 	})
 
-	if core.global_exists("WB") and WB.register_repairable then
-		WB:register_repairable(sname)
-	end
+	if register_repairable then register_repairable(nil, sname) end
 
 	-- def.ingredient overrides def.recipe
 	if def.ingredient ~= nil then
