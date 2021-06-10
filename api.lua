@@ -183,6 +183,16 @@ function slingshot.register(name, def)
 	})
 
 	if register_repairable then register_repairable(nil, sname) end
+
+	if def.recipe then
+		slingshot.log("warning", "\"recipe\" attribute no longer supported in registration")
+	end
+	if def.ingredient then
+		slingshot.log("warning", "\"ingredient\" attribute no longer supported in registration")
+	end
+	if def.aliases then
+		slingshot.log("warning", "\"aliases\" attribute no longer supported in registration")
+	end
 end
 
 
