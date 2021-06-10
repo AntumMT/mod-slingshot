@@ -209,5 +209,4 @@ end
 --  - Default: {fleshy=1}
 --  @tfield int velocity Speed & distance at which items will be thrown.
 --  @tfield int wear_rate Rate at which the slingshot will wear & break.
---  @tfield table aliases List of item names that should be uses as aliases for this slingshot.
 --  @see slingshot.register
