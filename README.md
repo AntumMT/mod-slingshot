@@ -17,8 +17,12 @@ The original code was extracted from [hook](https://forum.minetest.net/viewtopic
 
 ### Requirements:
 
+- Minimum Minetest version: 5.0.0
 - Depends: [default](https://github.com/minetest/minetest_game/tree/master/mods/default)
-- Optional depends: [technic](https://content.minetest.net/packages/RealBadAngel/technic/)
+- Optional depends:
+	- [technic](https://content.minetest.net/packages/RealBadAngel/technic/)
+	- [xdecor](https://content.minetest.net/packages/jp/xdecor/)
+	- [workbench](https://github.com/AntumMT/mod-xdecor/tree/workbench)
 
 ### Usage:
 

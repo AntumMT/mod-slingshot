@@ -1,6 +1,8 @@
 -- Registrations for slinghot mod
 
 
+local S = core.get_translator(slingshot.modname)
+
 local textures = {
 	rubber_band = "rubber_band",
 	wood = "wood",
@@ -18,7 +20,7 @@ local latex_available = core.registered_items["technic:raw_latext"] ~= nil
 
 if rubber_available or latex_available then
 	core.register_craftitem("slingshot:rubber_band", {
-		description = "Rubber band",
+		description = S("Rubber Band"),
 		inventory_image = "slingshot_" .. textures.rubber_band .. ".png",
 	})
 end
@@ -51,7 +53,7 @@ end
 
 -- A wooden slingshot
 slingshot.register("wood", {
-	description = "Wooden slingshot",
+	description = S("Wooden Slingshot"),
 	image = "slingshot_" .. textures.wood .. ".png",
 	damage_groups = {fleshy=1},
 	velocity = 10,
@@ -75,7 +77,7 @@ ing_1 = "default:steel_ingot"
 
 -- A stronger iron slingshot
 slingshot.register("iron", {
-	description = "Iron Slingshot",
+	description = S("Iron Slingshot"),
 	image = "slingshot_" .. textures.iron .. ".png",
 	damage_groups = {fleshy=3},
 	velocity = 15,
