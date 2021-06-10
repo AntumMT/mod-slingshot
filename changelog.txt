@@ -6,6 +6,7 @@ v0.3
 - items can be registered as ammos with custom attack values
 - slingshots can be repaired with workbench if "xdecor.register_repairable" method available
 - craft recipes & aliases no longer registered with slingshot registration
+- technic:rubber outputs 6 rubber bands instead of 10
 
 v0.2
 ----

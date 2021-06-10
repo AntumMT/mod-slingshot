@@ -20,7 +20,7 @@ core.register_craftitem("slingshot:rubber_band", {
 
 if core.global_exists("technic") then
 	core.register_craft({
-		output = "slingshot:rubber_band 20",
+		output = "slingshot:rubber_band 6",
 		type = "shapeless",
 		recipe = {"technic:rubber"},
 	})
