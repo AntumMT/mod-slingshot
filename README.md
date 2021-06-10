@@ -2,7 +2,7 @@
 
 ### Description:
 
-Adds a slingshot that can throw inventory items as ammunition.
+Adds slingshots that can throw inventory items as ammunition.
 
 The original code was extracted from [hook](https://forum.minetest.net/viewtopic.php?t=13634) mod by [AiTechEye](https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172).
 
