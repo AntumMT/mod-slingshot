@@ -1,4 +1,9 @@
 
+next
+----
+- added "textdomain" line to localization template
+
+
 v0.3
 ----
 - added new textures
@@ -11,6 +16,7 @@ v0.3
 - added localization support
 - "default" changed to optional dependency required for craft recipe only
 
+
 v0.2
 ----
 - custom images can be used for registering new slingshot
@@ -20,6 +26,7 @@ v0.2
 	- iron: fleshy=3
 - wear is disabled in creative mode
 - ammo does not depelete in creative mode
+
 
 v0.1
 ----

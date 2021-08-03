@@ -1,4 +1,6 @@
-Translated by:
+# textdomain:slingshot
+
+# Translators:
 
 
 Rubber Band=
