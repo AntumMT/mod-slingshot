@@ -11,9 +11,11 @@ The original code was extracted from [hook](https://forum.minetest.net/viewtopic
 ### Licensing:
 
 - Code
-	- Original code by AiTechEye: [CC0][lic.cc0]
-	- Code by Jordan Irwin (AntumDeluge): [MIT][lic.mit]
-- Textures: [CC0][lic.cc0]
+	- Original code by AiTechEye: CC0
+	- Code by Jordan Irwin (AntumDeluge): [MIT](LICENSE.txt)
+- Textures:
+	- Orignals by AiTechEye: CC BY-SA 4.0
+	- New: CC0
 
 ### Requirements:
 
@@ -124,7 +126,3 @@ slingshot.ammos
 - [API](https://antummt.github.io/mod-slingshot/docs/api.html)
 - [Changelog](changelog.txt)
 - [TODO](TODO.txt)
-
-
-[lic.cc0]: LICENSE-cc0.txt
-[lic.mit]: LICENSE.txt

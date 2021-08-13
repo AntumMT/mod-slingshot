@@ -3,5 +3,4 @@ TODO:
 - possibly convert to use a throwing API
 - fix setting default entity duration value (item_entity_ttl) to 900, same as minetest.conf.example
 - don't use "on_globalstep" to ensure hit
-- remove old textures or change license to CC BY-SA 4.0 to match AiTechEye's licensing
 - add Spanish translation
