@@ -122,7 +122,10 @@ slingshot.ammos
 
 - [![ContentDB](https://content.luanti.org/packages/AntumDeluge/slingshot/shields/title/)](https://content.luanti.org/packages/AntumDeluge/slingshot/)
 - [Forum](https://forum.luanti.org/viewtopic.php?t=18315)
-- [Git repo](https://github.com/AntumMT/mod-slingshot)
+- Git repos:
+    - [Codeberg](https://codeberg.org/AntumLuanti/mod-slingshot)
+    - [GitHub](https://github.com/AntumMT/mod-slingshot)
+    - [GitLab](https://gitlab.com/AntumMT/mod-slingshot)
 - [API](https://antummt.github.io/mod-slingshot/docs/api.html)
 - [Changelog](changelog.txt)
 - [TODO](TODO.txt)
