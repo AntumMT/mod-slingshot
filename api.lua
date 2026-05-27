@@ -205,7 +205,7 @@ end
 --  @table slingshot.register.def
 --  @tfield string description Human-readable description of slingshot (e.g. ***"Wooden Slinghot"***).
 --  @tfield table damage_groups
---  - Same as [minetest.register_tool.tool_capabilities.damage_groups](https://github.com/minetest/minetest/blob/71b02d6/doc/lua_api.txt#L1551)
+--  - Same as [core.register_tool.tool_capabilities.damage_groups](https://github.com/luanti-org/luanti/blob/71b02d6/doc/lua_api.txt#L1551)
 --  - Default: {fleshy=1}
 --  @tfield int velocity Speed & distance at which items will be thrown.
 --  @tfield int wear_rate Rate at which the slingshot will wear & break.
