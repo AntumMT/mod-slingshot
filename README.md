@@ -1,10 +1,10 @@
-## Slingshot for Minetest
+## Slingshot for Luanti
 
 ### Description:
 
 Adds slingshots that can throw inventory items as ammunition.
 
-The original code was extracted from [hook](https://forum.minetest.net/viewtopic.php?t=13634) mod by [AiTechEye](https://forum.minetest.net/memberlist.php?mode=viewprofile&u=16172).
+The original code was extracted from [hook](https://forum.luanti.org/viewtopic.php?t=13634) mod by [AiTechEye](https://forum.luanti.org/memberlist.php?mode=viewprofile&u=16172).
 
 ![Screenshot](screenshot.png)
 
@@ -19,12 +19,12 @@ The original code was extracted from [hook](https://forum.minetest.net/viewtopic
 
 ### Requirements:
 
-- Minimum Minetest version: 5.0.0
+- Minimum Luanti version: 5.0.0
 - Depends: none
 - Optional depends:
-	- [default](https://github.com/minetest/minetest_game/tree/master/mods/default) (required for craft recipe)
-	- [technic](https://content.minetest.net/packages/RealBadAngel/technic/) (changes craft recipes to use rubber band)
-	- [xdecor](https://content.minetest.net/packages/jp/xdecor/) (workbench can be used to repair slingshots)
+	- [default](https://github.com/luanti-org/minetest_game/tree/master/mods/default) (required for craft recipe)
+	- [technic](https://content.luanti.org/packages/RealBadAngel/technic/) (changes craft recipes to use rubber band)
+	- [xdecor](https://content.luanti.org/packages/jp/xdecor/) (workbench can be used to repair slingshots)
 	- [workbench](https://github.com/AntumMT/mod-xdecor/tree/workbench) (can be used to repair slingshots)
 
 ### Usage:
@@ -120,8 +120,8 @@ slingshot.ammos
 
 ### Links:
 
-- [![ContentDB](https://content.minetest.net/packages/AntumDeluge/slingshot/shields/title/)](https://content.minetest.net/packages/AntumDeluge/slingshot/)
-- [Forum](https://forum.minetest.net/viewtopic.php?t=18315)
+- [![ContentDB](https://content.luanti.org/packages/AntumDeluge/slingshot/shields/title/)](https://content.luanti.org/packages/AntumDeluge/slingshot/)
+- [Forum](https://forum.luanti.org/viewtopic.php?t=18315)
 - [Git repo](https://github.com/AntumMT/mod-slingshot)
 - [API](https://antummt.github.io/mod-slingshot/docs/api.html)
 - [Changelog](changelog.txt)

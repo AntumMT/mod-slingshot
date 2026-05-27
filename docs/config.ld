@@ -1,5 +1,5 @@
 
-title = "Slingshot for Minetest"
+title = "Slingshot for Luanti"
 project = "Slingshot"
 format = "discount"
 not_luadoc = true

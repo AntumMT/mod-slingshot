@@ -31,7 +31,7 @@ v0.2
 
 v0.1
 ----
-- forked from AiTechEye's hook mod v10 ( https://forum.minetest.net/viewtopic.php?t=13634 ) (2017-04-09) CC0
+- forked from AiTechEye's hook mod v10 ( https://forum.luanti.org/viewtopic.php?t=13634 ) (2017-04-09) CC0
 - removed hook code
 - changed license to MIT
 - created rubber band item for craft recipes (requires technic)
