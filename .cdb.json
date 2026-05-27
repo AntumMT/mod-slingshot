@@ -1,12 +1,19 @@
 {
 	"type": "MOD",
-	"name": "slingshot",
 	"title": "Slingshot",
+	"name": "slingshot",
 	"short_description": "Slingshots that can throw inventory items as ammunition.",
+	"dev_state": "BETA",
+	"ai_disclosure": "NONE",
+	"tags": ["tools"],
+	"content_warnings": null,
 	"license": "MIT",
 	"media_license": "CC-BY-SA-4.0",
-	"tags": ["tools"],
-	"repo": "https://github.com/AntumMT/mod-slingshot",
-	"issue_tracker": "https://github.com/AntumMT/mod-slingshot/issues",
-	"forums": 18315
+	"repo": "https://codeberg.org/AntumLuanti/mod-slingshot",
+	"website": null,
+	"issue_tracker": "https://codeberg.org/AntumLuanti/mod-slingshot/issues",
+	"forums": 18315,
+	"video_url": null,
+	"donate_url": null,
+	"translation_url": null
 }
