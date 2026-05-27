@@ -11,21 +11,21 @@ The original code was extracted from [hook](https://forum.luanti.org/viewtopic.p
 ### Licensing:
 
 - Code
-	- Original code by AiTechEye: CC0
-	- Code by Jordan Irwin (AntumDeluge): [MIT](LICENSE.txt)
+    - Original code by AiTechEye: CC0
+    - Code by Jordan Irwin (AntumDeluge): [MIT](LICENSE.txt)
 - Textures:
-	- Orignals by AiTechEye: CC BY-SA 4.0
-	- New: CC0
+    - Orignals by AiTechEye: CC BY-SA 4.0
+    - New: CC0
 
 ### Requirements:
 
 - Minimum Luanti version: 5.0.0
 - Depends: none
 - Optional depends:
-	- [default](https://github.com/luanti-org/minetest_game/tree/master/mods/default) (required for craft recipe)
-	- [technic](https://content.luanti.org/packages/RealBadAngel/technic/) (changes craft recipes to use rubber band)
-	- [xdecor](https://content.luanti.org/packages/jp/xdecor/) (workbench can be used to repair slingshots)
-	- [workbench](https://github.com/AntumMT/mod-xdecor/tree/workbench) (can be used to repair slingshots)
+    - [default](https://github.com/luanti-org/minetest_game/tree/master/mods/default) (required for craft recipe)
+    - [technic](https://content.luanti.org/packages/RealBadAngel/technic/) (changes craft recipes to use rubber band)
+    - [xdecor](https://content.luanti.org/packages/jp/xdecor/) (workbench can be used to repair slingshots)
+    - [workbench](https://github.com/AntumMT/mod-xdecor/tree/workbench) (can be used to repair slingshots)
 
 ### Usage:
 
@@ -107,14 +107,14 @@ rubber band (shapeless):
 
 ```
 slingshot.old_textures
-	- Use old 16x16 textures.
-	- type:    bool
-	- default: false
+    - Use old 16x16 textures.
+    - type:    bool
+    - default: false
 
 slingshot.ammos
-	- Value of these items will be added to slingshot attack when thrown.
-	- type:    string (comma-separated key=value list)
-	- default: default:mese_crystal=5
+    - Value of these items will be added to slingshot attack when thrown.
+    - type:    string (comma-separated key=value list)
+    - default: default:mese_crystal=5
 ```
 
 
