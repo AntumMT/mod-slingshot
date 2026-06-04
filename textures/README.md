@@ -8,8 +8,14 @@ Original textures by AiTechEye ([CC BY-SA 4.0]):
 
 New textures ([CC0]):
 
-- slingshot_rubber_band\* ![](slingshot_rubber_band\*) [base image](https://commons.wikimedia.org/wiki/File:Gummisnoddar.jpeg)
-- slingshot_[wood|iron] ![](slingshot_wood) [source][slingshot-src] ([preserved by Wayback Machine][slingshot-src-wayback])
+- rubber band:
+    - [base image](https://commons.wikimedia.org/wiki/File:Gummisnoddar.jpeg)
+    - slingshot_rubber_band-old ![](slingshot_rubber_band-old.png)
+    - slingshot_rubber_band ![](slingshot_rubber_band)
+- slingshot:
+    - [source][slingshot-src] ([preserved by Wayback Machine][slingshot-src-wayback])
+    - slingshot_wood ![](slingshot_wood.png)
+    - slingshot_iron ![](slingshot_iron.png)
 
 
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt
