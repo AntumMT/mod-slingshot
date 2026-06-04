@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="309.27pt" height="300.67pt" version="1.1" viewBox="0 0 309.27 300.67" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title>Slingshot</dc:title>
+<cc:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/"/>
+<dc:date>11/12/2016</dc:date>
+<dc:creator>
+<cc:Agent>
+<dc:title>edited by Paul Sherman</dc:title>
+</cc:Agent>
+</dc:creator>
+<dc:rights>
+<cc:Agent>
+<dc:title>pd</dc:title>
+</cc:Agent>
+</dc:rights>
+<dc:publisher>
+<cc:Agent>
+<dc:title>wpclipart</dc:title>
+</cc:Agent>
+</dc:publisher>
+</cc:Work>
+<cc:License rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+</cc:License>
+</rdf:RDF>
+</metadata>
+<g stroke-linecap="round" stroke-linejoin="round">
+<path transform="matrix(.59828 -.79979 -.79979 -.59828 -251.06 232.43)" d="m493.31-307.31c-79.863 24.417-361.47 136.98-208.35 180.64 56.96 6.7158 81.593-28.91 101.8-51.785" fill="none" stroke="#844d28" stroke-width="17.287"/>
+<path transform="matrix(.59828 -.79979 -.79979 -.59828 -251.06 232.43)" d="m286.02-273.61c-17.449 14.191-27.832 34.575-41.384 52.097-5.4087 22.587 17.501 46.963 39.581 46.703 20.285-6.2766 34.838-24.119 50.86-37.16 18.905-21.981-13.595-34.751-26.245-47.985-6.8191-5.6138-14.188-11.224-22.812-13.655z" fill="#3d2821" stroke="#844d28" stroke-width="17.287"/>
+<path transform="matrix(.69299 .71928 -.71928 .69299 -217.71 -75.328)" d="m599.2-110.38-152.38-86.433-25.931-100.44 25.931 100.44-135.09 23.854" fill="none" stroke="#4e331f" stroke-width="34.573"/>
+<path transform="matrix(.9988 0 0 .9988 -203.7 298.87)" d="m347.26-275.19-29.344 19.089" fill="none" stroke="#8f542c" stroke-width="10"/>
+<path transform="matrix(.9988 0 0 .9988 -203.7 298.87)" d="m358.57-266-29.344 19.093" fill="none" stroke="#8f542c" stroke-width="10"/>
+<path transform="matrix(.9988 0 0 .9988 -203.7 298.87)" d="m371.65-257.87-29.348 19.093" fill="none" stroke="#8f542c" stroke-width="10"/>
+<path transform="matrix(.16286 .98543 -.98543 .16286 -32.394 -258.71)" d="m347.25-275.2-29.342 19.093" fill="none" stroke="#8f542c" stroke-width="10"/>
+<path transform="matrix(.16286 .98543 -.98543 .16286 -32.394 -258.71)" d="m358.57-266.01-29.345 19.093" fill="none" stroke="#8f542c" stroke-width="10"/>
+<path transform="matrix(.16286 .98543 -.98543 .16286 -32.394 -258.71)" d="m371.65-257.87-29.345 19.093" fill="none" stroke="#8f542c" stroke-width="10"/>
+</g>
+</svg>

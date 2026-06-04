@@ -1,2 +1,3 @@
-.*   export-ignore
-docs export-ignore
+.*              export-ignore
+docs            export-ignore
+textures/src/*  export-ignore
