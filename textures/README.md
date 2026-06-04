@@ -11,7 +11,7 @@ New textures ([CC0]):
 - rubber band:
     - [base image](https://commons.wikimedia.org/wiki/File:Gummisnoddar.jpeg)
     - slingshot_rubber_band-old ![](slingshot_rubber_band-old.png)
-    - slingshot_rubber_band ![](slingshot_rubber_band)
+    - slingshot_rubber_band ![](slingshot_rubber_band.png)
 - slingshot:
     - [source][slingshot-src] ([preserved by Wayback Machine][slingshot-src-wayback])
     - slingshot_wood ![](slingshot_wood.png)
