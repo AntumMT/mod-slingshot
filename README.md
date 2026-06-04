@@ -13,7 +13,7 @@ The original code was extracted from [hook](https://forum.luanti.org/viewtopic.p
 - Code
     - Original code by AiTechEye: CC0
     - Code by Jordan Irwin (AntumDeluge): [MIT](LICENSE.txt)
-- Textures:
+- Textures (see [textures/README.md](textures/README.md)):
     - Orignals by AiTechEye: CC BY-SA 4.0
     - New: CC0
 
