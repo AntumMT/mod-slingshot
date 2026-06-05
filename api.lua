@@ -87,6 +87,8 @@ core.register_globalstep(function(dtime)
 
 			-- FIXME: don't play hit sound if already implemented by entity/mod
 			core.sound_play("slingshot_hard_punch", {pos=target:get_pos(), gain=1.0, max_hear_distance=5})
+			-- remove from world
+			thrown.ob:remove()
 			target:punch(puncher, 1.0, {damage_groups=thrown.damage_groups}, nil)
 			thrown.ob:set_acceleration({x=0, y=0, z=0})
 			thrown.ob:set_velocity({x=0, y=-10, z=0})
