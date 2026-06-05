@@ -39,7 +39,13 @@ end
 
 
 local get_thrown_target = function(thrown)
-	for _, target in pairs(core.get_objects_inside_radius(thrown.ob:get_pos(), 1.5)) do
+	pos = thrown.ob:get_pos()
+	if pos == nil then
+		slingshot.log("debug", "thrown object position not available")
+		return
+	end
+
+	for _, target in pairs(core.get_objects_inside_radius(pos, 1.5)) do
 		repeat
 			if target:get_luaentity() == nil then
 				break
