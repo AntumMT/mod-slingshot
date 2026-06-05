@@ -95,8 +95,8 @@ for _, a in ipairs({slingshot.modname .. ":slingshot", "iron_slingshot"}) do
 	core.register_alias(a, slingshot.modname .. ":iron")
 end
 
-if core.registered_items["default:steel_ingot"] then
-	ing_1 = "default:steel_ingot"
+if core.global_exists("xcompat") and core.registered_items[xcompat.materials.steel_ingot] then
+	ing_1 = xcompat.materials.steel_ingot
 
 	core.register_craft({
 		output = slingshot.modname .. ":iron",

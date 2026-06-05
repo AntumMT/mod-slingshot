@@ -22,8 +22,8 @@ The original code was extracted from [hook](https://forum.luanti.org/viewtopic.p
 - Minimum Luanti version: 5.0.0
 - Depends: none
 - Optional depends:
-    - [default](https://github.com/luanti-org/minetest_game/tree/master/mods/default) (required for craft recipe)
     - [technic](https://content.luanti.org/packages/RealBadAngel/technic/) (changes craft recipes to use rubber band)
+    - [xcompat](https://content.luanti.org/packages/mt-mods/xcompat/) (required for craft recipe)
     - [xdecor](https://content.luanti.org/packages/jp/xdecor/) (workbench can be used to repair slingshots)
     - [workbench](https://github.com/AntumMT/mod-xdecor/tree/workbench) (can be used to repair slingshots)
 
@@ -37,8 +37,8 @@ The original code was extracted from [hook](https://forum.luanti.org/viewtopic.p
 
 **Legend:**
 
-* `SI` = default:steel_ingot
-* `ST` = default:stick
+* `SI` = steel_ingot (determined by `xcompat`)
+* `ST` = group:stick
 * `RB` = slingshot:rubber_band
 * `TR` = technic:rubber
 * `TL` = technic:raw_latex
