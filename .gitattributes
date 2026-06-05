@@ -1,3 +1,4 @@
 .*              export-ignore
+*.py            export-ignore
 docs            export-ignore
 textures/src/*  export-ignore
