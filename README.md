@@ -115,6 +115,12 @@ slingshot.ammos
     - Value of these items will be added to slingshot attack when thrown.
     - type:    string (comma-separated key=value list)
     - default: default:mese_crystal=5
+
+item_texture_res
+    - Item texture resolution to use when available.
+    - type:    enum
+    - options: 16, 32
+    - default: 16
 ```
 
 

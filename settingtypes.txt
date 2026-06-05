@@ -23,3 +23,6 @@ item_entity_ttl (Thrown item duration) int 890 -1
 
 # Determines if PVP is enabled.
 enable_pvp (Enable PVP) bool true
+
+# Item texture resolution to use when available.
+item_texture_res (Item textures resolution) enum 16 16,32

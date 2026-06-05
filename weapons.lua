@@ -12,6 +12,16 @@ if slingshot.old_textures then
 	for k, v in pairs(textures) do
 		textures[k] = v .. "-old"
 	end
+else
+	texture_res = core.settings:get("item_texture_res") or "16"
+	-- supported item texture resolutions
+	local sres = {["16"] = true, ["32"] = true}
+	if not sres[texture_res] then
+		texture_res = "16"
+	end
+	for k, v in pairs(textures) do
+		textures[k] = v .. "-" .. texture_res
+	end
 end
 
 
