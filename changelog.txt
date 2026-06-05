@@ -1,4 +1,9 @@
 
+next
+----
+- use same default value for item_entity_ttl as minetest.conf.example
+
+
 2026-06-05.1
 ------------
 - caught error when thrown item position isn't available
