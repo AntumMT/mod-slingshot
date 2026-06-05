@@ -1,6 +1,6 @@
 
-next
-----
+2026-06-05
+----------
 - added support for 16px item textures
 - steel ingot ingredient determined by `xcompat` instead of `default`
 - improved throw cooldown
