@@ -5,8 +5,11 @@
 --  @module api
 
 
+-- items currently in air
 local tmp_throw = {}
-local tmp_throw_timer = 0
+
+-- times of last throw by users in milliseconds
+local throw_timers = {}
 
 local registered_ammos = {}
 
@@ -39,11 +42,6 @@ end
 --
 -- FIXME: using  on_globalstep causes attack to miss when in sync
 core.register_globalstep(function(dtime)
-	tmp_throw_timer = tmp_throw_timer + dtime
-	if tmp_throw_timer < 0.2 then return end
-
-	-- Reset cooldown
-	tmp_throw_timer = 0
 	for i, t in pairs(tmp_throw) do
 		local puncher = core.get_player_by_name(t.user)
 		t.timer = t.timer-0.25
@@ -176,8 +174,21 @@ function slingshot.register(name, def)
 				return itemstack
 			end
 			]]
-			on_throw(itemstack, user, def.velocity, def.wear_rate, def.damage_groups)
-			return itemstack
+
+			-- time of throw attempt in milliseconds
+			local throw_time = math.floor(core.get_us_time() / 1000)
+			local pname = user:get_player_name()
+			-- TODO: configure cooldown in settings
+			local cooldown = 200 - (throw_time - (throw_timers[pname] or 0))
+			if cooldown > 0 then
+				slingshot.log("debug", "player "..pname.." must wait "..(cooldown/1000).." seconds to throw again")
+				return itemstack
+			end
+
+			-- update player throw time
+			throw_timers[pname] = throw_time
+
+			return on_throw(itemstack, user, def.velocity, def.wear_rate, def.damage_groups)
 		end,
 	})
 
