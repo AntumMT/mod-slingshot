@@ -111,11 +111,11 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 	local dir = user:get_look_dir()
 
 	-- Throw items in slot to right
-	local item = user:get_inventory():get_stack("main", user:get_wield_index()+1):get_name()
+	local ammo = user:get_inventory():get_stack("main", user:get_wield_index()+1):get_name()
 
-	if item == "" then return itemstack end
+	if ammo == "" then return itemstack end
 
-	local e = core.add_item({x=pos.x, y=pos.y+2, z=pos.z}, item)
+	local e = core.add_item({x=pos.x, y=pos.y+2, z=pos.z}, ammo)
 	if e then
 		e:set_velocity({x=dir.x*veloc, y=dir.y*veloc, z=dir.z*veloc})
 		e:set_acceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
@@ -127,7 +127,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 			dg = {fleshy=1}
 		end
 
-		local addon = registered_ammos[item]
+		local addon = registered_ammos[ammo]
 		if addon then
 			for k, v in pairs(dg) do
 				dg[k] = v + addon
@@ -148,7 +148,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 				itemstack:add_wear(wear_rate)
 			end
 
-			user:get_inventory():remove_item("main", item)
+			user:get_inventory():remove_item("main", ammo)
 		end
 
 		core.sound_play("slingshot_throw", {pos=pos, gain=1.0, max_hear_distance=5,})
