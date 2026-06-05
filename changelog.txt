@@ -1,4 +1,9 @@
 
+next
+----
+- added support for 16px item textures
+
+
 v0.4
 ----
 - added "textdomain" line to localization template
