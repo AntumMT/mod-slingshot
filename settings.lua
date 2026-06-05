@@ -77,3 +77,13 @@ slingshot.thrown_duration = tonumber(core.settings:get("item_entity_ttl")) or 89
 --  @settype bool
 --  @default true
 slingshot.enable_pvp = core.settings:get_bool("enable_pvp", true)
+
+
+-- settings not configured here
+
+--- Item texture resolution to use when available.
+--
+--  @setting item_texture_res
+--  @settype enum
+--  @enum_values 16, 32
+--  @default 16
