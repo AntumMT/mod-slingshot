@@ -52,7 +52,7 @@ local get_thrown_target = function(thrown)
 				if not slingshot.enable_pvp then
 					return
 				end
-			elseif not target:get_luaentity() or (target:get_luaentity() and target:get_luaentity().name ~= "__builtin:item") then
+			elseif target:get_luaentity() and target:get_luaentity().name ~= "__builtin:item" then
 				return target
 			end
 		until true
