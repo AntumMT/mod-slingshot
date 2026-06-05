@@ -77,7 +77,6 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 	local pos = user:get_pos()
 	local upos = {x=pos.x, y=pos.y+2, z=pos.z}
 	local dir = user:get_look_dir()
-	local item = itemstack:to_table()
 
 	-- Throw items in slot to right
 	local item = user:get_inventory():get_stack("main", user:get_wield_index()+1):get_name()
