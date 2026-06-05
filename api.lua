@@ -38,27 +38,59 @@ if slingshot.ammos and slingshot.ammos:trim() ~= "" then
 end
 
 
+local get_thrown_target = function(thrown)
+	for _, target in pairs(core.get_objects_inside_radius(thrown.ob:get_pos(), 1.5)) do
+		repeat
+			if target:get_luaentity() == nil then
+				break
+			elseif thrown.ob:is_player() then
+				if thrown.ob:get_player_name() == thrown.user then
+					-- ignore thrower
+					break
+				end
+
+				if not slingshot.enable_pvp then
+					return
+				end
+			elseif not target:get_luaentity() or (target:get_luaentity() and target:get_luaentity().name ~= "__builtin:item") then
+				return target
+			end
+		until true
+	end
+end
+
 -- Registers 'cooldown' time for repeat throws
 --
 -- FIXME: using  on_globalstep causes attack to miss when in sync
 core.register_globalstep(function(dtime)
-	for i, t in pairs(tmp_throw) do
-		local puncher = core.get_player_by_name(t.user)
-		t.timer = t.timer-0.25
-		if t.timer <= 0 or t.ob == nil or t.ob:get_pos() == nil then table.remove(tmp_throw, i) return end
-		for ii, ob in pairs(core.get_objects_inside_radius(t.ob:get_pos(), 1.5)) do
-			if (not ob:get_luaentity()) or (ob:get_luaentity() and (ob:get_luaentity().name ~= "__builtin:item")) then
-				-- Which entities can be attacked (mobs & other players unless PVP is enabled)
-				if (not ob:is_player()) or (ob:is_player() and ob:get_player_name(ob) ~= t.user and slingshot.enable_pvp) then
-					ob:punch(puncher, 1.0, {damage_groups=t.damage_groups}, nil)
-					t.ob:set_velocity({x=0, y=0, z=0})
-					t.ob:set_acceleration({x=0, y=-10, z=0})
-					t.ob:set_velocity({x=0, y=-10, z=0})
-					table.remove(tmp_throw, i)
-					core.sound_play("slingshot_hard_punch", {pos=ob:get_pos(), gain=1.0, max_hear_distance=5,})
-					break
-				end
+	for i, thrown in pairs(tmp_throw) do
+		repeat
+			if thrown.ob == nil or thrown.ob:get_pos() == nil then
+				table.remove(tmp_throw, i)
+				break
 			end
+
+			local velo = thrown.ob:get_velocity()
+			if velo.x == 0 and velo.y == 0 and velo.z == 0 then
+				-- thrown item has hit the ground
+				thrown.ob:set_acceleration({x=0, y=0, z=0})
+				table.remove(tmp_throw, i)
+				break
+			end
+		until true
+
+		local puncher = core.get_player_by_name(thrown.user)
+		local target = get_thrown_target(thrown)
+		if target ~= nil then
+			-- DEBUG:
+			slingshot.log("debug", "target: "..target:get_luaentity().name)
+
+			-- FIXME: don't play hit sound if already implemented by entity/mod
+			core.sound_play("slingshot_hard_punch", {pos=target:get_pos(), gain=1.0, max_hear_distance=5})
+			target:punch(puncher, 1.0, {damage_groups=thrown.damage_groups}, nil)
+			thrown.ob:set_acceleration({x=0, y=0, z=0})
+			thrown.ob:set_velocity({x=0, y=-10, z=0})
+			table.remove(tmp_throw, i)
 		end
 	end
 end)
@@ -100,6 +132,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 			end
 		end
 
+		-- XXX: `timer` no longer used
 		table.insert(tmp_throw, {ob=e, timer=2, user=user:get_player_name(), damage_groups=dg})
 
 		if not slingshot.creative then
