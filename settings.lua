@@ -53,33 +53,8 @@ slingshot.thrown_duration = tonumber(core.settings:get("slingshot.ammo_ttl")) or
 --  @default true
 slingshot.enable_wear = core.settings:get_bool("enable_weapon_wear", true)
 
---- Log extra messages.
---
---  @setting log_mods
---  @settype bool
---  @default false
-slingshot.log_mods = core.settings:get_bool("log_mods", false)
-
---- Log extra debug messages.
---
---  @setting enable_debug_mods
---  @settype bool
---  @default false
-slingshot.debug = core.settings:get_bool("enable_debug_mods", false)
-
---- Determines if game is being run in creative mode.
---
---  @setting creative_mode
---  @settype bool
---  @default false
 slingshot.creative = core.settings:get_bool("creative_mode", false)
 
-
---- Determines if PVP is enabled.
---
---  @setting enable_pvp
---  @settype bool
---  @default true
 slingshot.enable_pvp = core.settings:get_bool("enable_pvp", true)
 
 

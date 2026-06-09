@@ -12,17 +12,5 @@ slingshot.ammo_ttl (Thrown Item Duration) int 890 -1
 # Enables/Disables wear when used.
 enable_weapon_wear (Weapon wear) bool true
 
-# Log extra messages.
-log_mods (Log mods) bool false
-
-# Log extra debug messages.
-enable_debug_mods (Debug mods) bool false
-
-# Determines if game is being run in creative mode.
-creative_mode (Creative) bool false
-
-# Determines if PVP is enabled.
-enable_pvp (Enable PVP) bool true
-
 # Item texture resolution to use when available.
 item_texture_res (Item textures resolution) enum 16 16,32
