@@ -2,6 +2,7 @@
 next
 ----
 - use same default value for item_entity_ttl as minetest.conf.example
+- use mod_logger for logging
 
 
 2026-06-05.1
