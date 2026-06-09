@@ -152,8 +152,8 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 		end
 
 		core.sound_play("slingshot_throw", {pos=pos, gain=1.0, max_hear_distance=5,})
-		return itemstack
 	end
+	return itemstack
 end
 
 
