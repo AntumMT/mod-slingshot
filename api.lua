@@ -125,11 +125,7 @@ local function on_throw(itemstack, user, veloc, wear_rate, damage_groups)
 		e:set_acceleration({x=dir.x*-3, y=-5, z=dir.z*-3})
 		e:get_luaentity().age = slingshot.thrown_duration
 
-		local dg = table.copy(damage_groups)
-
-		if dg == nil then
-			dg = {fleshy=1}
-		end
+		local dg = table.copy(damage_groups) or {fleshy=1}
 
 		local addon = registered_ammos[ammo]
 		if addon then
