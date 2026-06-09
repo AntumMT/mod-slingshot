@@ -26,6 +26,18 @@ slingshot.old_textures = core.settings:get_bool("slingshot.old_textures", false)
 --  @default default:mese_crystal=5
 slingshot.ammos = core.settings:get("slingshot.ammos") or "default:mese_crystal=5"
 
+--- Time in seconds for ammo to exist in world.
+--
+--  Setting to -1 disables expiration. Defaults to value of `item_entity_ttl` if not set.
+--
+--  FIXME: setting to 900 (same as `item_entity_ttl` default) breaks throwing
+--
+--  @setting slingshot.ammo_ttl
+--  @settype int
+--  @default 890
+slingshot.thrown_duration = tonumber(core.settings:get("slingshot.ammo_ttl")) or 890
+--~ slingshot.thrown_duration = tonumber(core.settings:get("slingshot.ammo_ttl")) or tonumber(core.settings:get("item_entity_ttl")) or 900
+
 
 --- General settings.
 --
@@ -62,14 +74,6 @@ slingshot.debug = core.settings:get_bool("enable_debug_mods", false)
 --  @default false
 slingshot.creative = core.settings:get_bool("creative_mode", false)
 
---- Time in seconds for item entity (dropped items) to live.
---
---  Setting it to -1 disables the feature.
---
---  @setting item_entity_ttl
---  @settype int
---  @default 890
-slingshot.thrown_duration = tonumber(core.settings:get("item_entity_ttl")) or 890
 
 --- Determines if PVP is enabled.
 --
