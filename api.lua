@@ -66,8 +66,6 @@ local get_thrown_target = function(thrown)
 end
 
 -- Registers 'cooldown' time for repeat throws
---
--- FIXME: using  on_globalstep causes attack to miss when in sync
 core.register_globalstep(function(dtime)
 	for i, thrown in pairs(tmp_throw) do
 		repeat
