@@ -216,7 +216,7 @@ function slingshot.register(name, def)
 			local cooldown = 200 - (throw_time - (throw_timers[pname] or 0))
 			if cooldown > 0 then
 				slingshot.log("debug", "player "..pname.." must wait "..(cooldown/1000).." seconds to throw again")
-				return itemstack
+				return nil
 			end
 
 			-- update player throw time
